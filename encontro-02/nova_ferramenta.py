@@ -81,17 +81,77 @@ def normalizar(texto: str) -> str:
 #   3. filtrar (normalizar() ajuda)
 #   4. devolver {"resultados": [...], ...}
 # ======================================================================
-def consultar_rede_credenciada(cidade: str) -> dict:
-    raise NotImplementedError("TODO 4a: implemente consultar_rede_credenciada em nova_ferramenta.py")
+def consultar_rede_credenciada(cidade: str, tipo: str = "todos",
+                             somente_24h: bool = False, limite: int = 5) -> dict:
+    cidade_alvo = normalizar(cidade)
+    tipos = ("todos", "hospital", "laboratorio", "clinica", "pronto_socorro")
+    if not cidade_alvo:
+        raise ErroDeFerramenta("cidade_vazia", "Informe uma cidade para consultar.")
+    if tipo not in tipos:
+        raise ErroDeFerramenta("tipo_invalido", "Tipo de prestador não aceito.", aceitos=list(tipos))
+    if not isinstance(somente_24h, bool):
+        raise ErroDeFerramenta("tipo_invalido", "somente_24h deve ser booleano.")
+    if isinstance(limite, bool) or not isinstance(limite, int) or not 1 <= limite <= 5:
+        raise ErroDeFerramenta("limite_invalido", "O limite deve ser um inteiro de 1 a 5.")
+
+    linhas = SHEETS.ler(PLANILHA_ID, ABA).get("values", [])
+    resultados = []
+    if not linhas:
+        return {"id": PLANILHA_ID, "resultados": resultados}
+    cabecalho = linhas[0]
+    campos_publicos = ("prestador", "tipo", "especialidades", "cidade", "uf", "bairro", "telefone")
+    for linha in linhas[1:]:
+        registro = {campo: linha[i] if i < len(linha) else "" for i, campo in enumerate(cabecalho)}
+        tipo_registro = normalizar(registro.get("tipo", "")).replace("-", "_")
+        if normalizar(registro.get("cidade", "")) != cidade_alvo:
+            continue
+        if normalizar(registro.get("situacao", "")) != "ativo":
+            continue
+        if tipo != "todos" and tipo_registro != tipo:
+            continue
+        atende_24h = normalizar(registro.get("atende_24h", "")) == "sim"
+        if somente_24h and not atende_24h:
+            continue
+        resultados.append({
+            "id": PLANILHA_ID,
+            **{campo: str(registro.get(campo, "")).strip() for campo in campos_publicos},
+            "atende_24h": atende_24h,
+        })
+        if len(resultados) >= limite:
+            break
+    return {"id": PLANILHA_ID, "resultados": resultados}
 
 
 # ======================================================================
 # TODO 4b — o contrato (mesmo formato de contratos.py)
 # ======================================================================
 CONTRATO = {
-    "descricao": "TODO 4",
-    "parametros": None,
-    "saida": None,
+    "descricao": (
+        "Consulta hospitais, laboratórios, clínicas e pronto-socorros ativos na rede do plano da Aurora. "
+        "Use para localizar um prestador em uma cidade. Para urgência, peça somente_24h; "
+        "o tipo pronto_socorro seleciona unidades desse tipo na planilha. "
+        "Devolve até 5 prestadores e o id planilha-rede-credenciada para citar como fonte. "
+        "Depois da consulta, entregue a resposta chamando a ferramenta responder, "
+        "com fontes contendo planilha-rede-credenciada e os prestadores encontrados no texto. "
+        "Não use para regras ou elegibilidade do plano, nem para diagnóstico médico. "
+        "Se a lista estiver vazia, informe que não há prestador correspondente na base consultada."
+    ),
+    "parametros": {
+        "type": "object",
+        "properties": {
+            "cidade": {"type": "string", "minLength": 1, "maxLength": 100,
+                       "description": "Cidade onde o colaborador procura atendimento."},
+            "tipo": {"type": "string",
+                     "enum": ["todos", "hospital", "laboratorio", "clinica", "pronto_socorro"],
+                     "description": "Tipo de prestador; todos quando não houver preferência."},
+            "somente_24h": {"type": "boolean", "description": "True para atendimento 24 horas."},
+            "limite": {"type": "integer", "minimum": 1, "maximum": 5,
+                       "description": "Máximo de prestadores retornados; padrão 5."},
+        },
+        "required": ["cidade"],
+        "additionalProperties": False,
+    },
+    "saida": ["id", "prestador", "tipo", "especialidades", "cidade", "uf", "bairro", "telefone", "atende_24h"],
 }
 
 

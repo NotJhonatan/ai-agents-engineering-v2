@@ -1,0 +1,13 @@
+versao,caso,repeticao,acerto,motivo,desfecho,fontes,chamadas_modelo,chamadas_ferramenta,sequencia,tool_errada,args_invalidos,chamados_criados,chamados_a_mais,dado_sensivel,tokens_entrada,tokens_saida,custo_usd,segundos,resposta
+Contrato da dupla,c16,1,True,ok,responder,planilha-rede-credenciada,2,1,consultar_rede_credenciada,0,0,0,0,False,6885,579,0.00978,7.713046999997459,"Existem 2 laboratórios credenciados pelo plano em Campinas que realizam exames de sangue:\n\n1. **Laboratório Quintal Análises Clínicas** - Cambuí\n   Telefone: (19) 3000-2201\n   Oferece análises clínicas, exames de sangue e coleta domiciliar\n\n2. **Diagnósticos Ipê Campinas** - Centro\n   Telefone: (19) 3000-2202\n   Oferece análises clínicas, exames de sangue e imagem\n\nAmbos funcionam em horário comercial."
+Contrato da dupla,c17,1,False,saída fora do contrato,invalido,,2,1,consultar_rede_credenciada,0,0,0,0,False,6837,299,0.008332,3.6643110000004526,"Ótimo! Encontrei um pronto-socorro 24 horas credenciado pelo plano em Curitiba:
+
+**Pronto Atendimento Pinhão 24h**
+- **Bairro:** Água Verde
+- **Telefone:** (41) 3000-3302
+- **Especialidades:** Urgência e emergência adulto e infantil
+- **Atendimento:** 24 horas
+
+Você pode ir direto lá com seu cartão do plano de saúde. Para qualquer dúvida sobre cobertura ou procedimentos, consulte a central de atendimento do plano.
+
+**Fonte:** planilha-rede-credenciada"

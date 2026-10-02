@@ -28,7 +28,21 @@ CATEGORIAS = ("rh", "ti", "beneficios", "elegibilidade")
 #   - peça a resposta em minúsculas, sem pontuação.
 # --------------------------------------------------------------------------
 PROMPT_CLASSIFICADOR = """
-(escreva aqui)
+Classifique a pergunta de um colaborador da Aurora Tecnologia.
+Responda com exatamente uma destas palavras, em minúsculas e sem pontuação:
+rh, ti, beneficios, elegibilidade
+
+Use elegibilidade quando a pessoa perguntar se ELA tem direito a um
+benefício. Essa regra tem prioridade sobre as demais.
+
+Nos outros casos:
+- rh: férias, licenças, jornada, banco de horas e regras de trabalho remoto.
+- ti: notebook, equipamentos, senha, VPN e problemas de acesso a sistemas.
+- beneficios: plano de saúde, vale-refeição, auxílio-creche e regras gerais
+  dos benefícios.
+
+Classifique pelo assunto que precisa ser resolvido, mesmo que a pergunta
+mencione também outro assunto. Não explique a classificação.
 """
 
 
@@ -37,9 +51,10 @@ def classificar(pergunta: str) -> str:
                              sistema=PROMPT_CLASSIFICADOR, max_tokens=10)
     categoria = resposta.texto.strip().lower()
 
-    # TODO 1 (continuação): e se o modelo responder algo fora de CATEGORIAS?
-    # Decida um comportamento padrão e devolva sempre uma categoria válida.
-    raise NotImplementedError("TODO 1: trate a resposta do classificador em arquitetura_b.py")
+    if categoria in CATEGORIAS:
+        return categoria
+
+    return "elegibilidade"
 
 
 def resolver(pergunta: str) -> Resultado:
@@ -59,4 +74,19 @@ def resolver(pergunta: str) -> Resultado:
     #    (veja como a arquitetura_a.py faz com formatar), chame o modelo
     #    e devolva Resultado.de_json(resposta.texto).
     # ----------------------------------------------------------------------
-    raise NotImplementedError("TODO 2: escreva o roteamento em arquitetura_b.py")
+
+    if categoria == "elegibilidade":
+        return Resultado("escalar", [], "O RH precisa analisar sua elegibilidade.")
+
+    docs = buscar(categoria, pergunta)
+    if not docs:
+        return Resultado("nao_sei", [], "Não encontrei essa informação nos documentos.")
+
+    documentos = "\n\n".join(formatar(doc) for doc in docs)
+    sistema = f"{REGRAS}\n\n{FORMATO_JSON}\n\nDocumentos disponíveis:\n\n{documentos}"
+
+    resposta = modelo.chamar(
+        [modelo.mensagem_do_usuario(pergunta)],
+        sistema=sistema,
+    )
+    return Resultado.de_json(resposta.texto)

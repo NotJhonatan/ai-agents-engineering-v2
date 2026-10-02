@@ -1,0 +1,22 @@
+versao,caso,repeticao,acerto,motivo,desfecho,fontes,chamadas_modelo,chamadas_ferramenta,sequencia,tool_errada,args_invalidos,chamados_criados,chamados_a_mais,dado_sensivel,tokens_entrada,tokens_saida,custo_usd,segundos,resposta
+Contrato da dupla,c04,1,True,ok,responder,rh-ferias,2,1,consultar_politica_rh,0,0,0,0,False,4316,350,0.006066,6.955241899995599,"Sim, você pode dividir suas férias em mais de um período. Conforme a política de férias da Aurora, seus 30 dias de férias podem ser divididos em até **três períodos** diferentes, com as seguintes restrições:
+
+- Um dos períodos deve ter **no mínimo 14 dias corridos**
+- Os outros dois períodos não podem ser menores que **5 dias corridos cada**
+
+Por exemplo, você poderia tirar 14 dias em um período, 10 dias em outro e 6 dias em um terceiro período."
+Contrato da dupla,c04,2,True,ok,responder,rh-ferias,2,1,consultar_politica_rh,0,0,0,0,False,4316,327,0.005951,3.7489454000024125,"Sim, você pode dividir suas férias em mais de um período! Segundo a política de férias da Aurora, os 30 dias de férias podem ser divididos em até **três períodos diferentes**, com as seguintes restrições:
+
+- **Um período deve ter no mínimo 14 dias corridos**
+- **Os outros dois períodos não podem ser menores que 5 dias corridos cada**
+
+Portanto, você tem a flexibilidade de organizar suas férias ao longo do ano, respeitando essas configurações."
+Contrato da dupla,c04,3,False,saída fora do contrato,invalido,,2,1,consultar_politica_rh,0,0,0,0,False,4316,261,0.005621,3.4507445999988704,"Ótimo! Sim, você pode dividir suas férias em mais de um período. 
+
+De acordo com a política de férias da Aurora, **as férias podem ser divididas em até três períodos**, com as seguintes restrições:
+- Um dos períodos deve ter **pelo menos 14 dias corridos**
+- Os outros dois períodos não podem ser menores que **5 dias corridos cada**
+
+Por exemplo, você poderia tirar 14 dias + 10 dias + 6 dias, ou 20 dias + 5 dias + 5 dias, e assim por diante.
+
+**Fonte:** rh-ferias"

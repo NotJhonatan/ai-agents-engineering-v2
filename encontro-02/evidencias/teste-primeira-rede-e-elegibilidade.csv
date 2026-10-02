@@ -1,0 +1,31 @@
+versao,caso,repeticao,acerto,motivo,desfecho,fontes,chamadas_modelo,chamadas_ferramenta,sequencia,tool_errada,args_invalidos,chamados_criados,chamados_a_mais,dado_sensivel,tokens_entrada,tokens_saida,custo_usd,segundos,resposta
+Contrato da dupla,c14,1,True,ok,escalar,,2,1,verificar_elegibilidade_beneficio,0,0,0,0,False,6688,327,0.008323,5.9674153000014485,Verificação de elegibilidade para auxílio-creche - colaboradora 1043. Pré-análise indica atendimento dos critérios básicos (dependente na faixa de idade). Necessária análise de documentação (comprovantes de matrícula e pagamento).
+Contrato da dupla,c15,1,False,"desfecho 'nao_sei', esperado 'responder'",nao_sei,beneficios-auxilio-creche,2,1,consultar_regra_beneficio,0,0,0,0,False,6663,341,0.008368,3.3823706999974092,"O valor máximo do auxílio-creche é de **R$ 600,00 por filho** por mês, para despesas com creche ou pré-escola.
+
+No entanto, a documentação consultada não especifica até que idade da criança o benefício é válido. Recomendo entrar em contato com o RH para obter essa informação completa."
+Contrato da dupla,c16,1,False,saída fora do contrato,invalido,,2,1,consultar_rede_credenciada,0,0,0,0,False,6798,329,0.008443,3.7917801000003237,"Ótimo! Encontrei 2 laboratórios que atendem pelo plano em Campinas:
+
+1. **Laboratório Quintal Análises Clínicas**
+   - Bairro: Cambuí
+   - Telefone: (19) 3000-2201
+   - Especialidades: análises clínicas, exames de sangue e coleta domiciliar
+
+2. **Diagnósticos Ipê Campinas**
+   - Bairro: Centro
+   - Telefone: (19) 3000-2202
+   - Especialidades: análises clínicas, exames de sangue e imagem
+
+Ambos fazem exames de sangue e são credenciados pelo plano da Aurora. Você pode entrar em contato diretamente com qualquer um deles para agendar seu exame.
+
+Fonte: [planilha-rede-credenciada]"
+Contrato da dupla,c17,1,False,saída fora do contrato,invalido,,2,1,consultar_rede_credenciada,0,0,0,0,False,6772,324,0.008392,4.077520200000436,"Ótimo! Encontrei um pronto-socorro credenciado no plano de saúde da Aurora em Curitiba:
+
+**Pronto Atendimento Pinhão 24h**
+- **Bairro:** Água Verde
+- **Atendimento:** 24 horas
+- **Especialidades:** Urgência e emergência adulto e infantil
+- **Telefone:** (41) 3000-3302
+
+Você pode procurar esse atendimento a qualquer hora. Leve seu cartão do plano de saúde para garantir o atendimento.
+
+Fonte: [Rede Credenciada Aurora](planilha-rede-credenciada)"

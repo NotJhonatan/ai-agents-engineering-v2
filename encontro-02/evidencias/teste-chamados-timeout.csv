@@ -1,0 +1,14 @@
+versao,caso,repeticao,acerto,motivo,desfecho,fontes,chamadas_modelo,chamadas_ferramenta,sequencia,tool_errada,args_invalidos,chamados_criados,chamados_a_mais,dado_sensivel,tokens_entrada,tokens_saida,custo_usd,segundos,resposta
+Contrato da dupla,c11,1,False,saída fora do contrato,invalido,,3,2,buscar_base_ti → abrir_chamado_ti!timeout,0,0,1,0,False,8445,529,0.01109,9.338642399998207,"Ocorreu um timeout ao tentar criar o chamado. Isso significa que ele **pode ter sido criado**, mas não consegui confirmar. 
+
+**O que você deve fazer agora:**
+- Verifique seu e-mail nos próximos minutos para confirmar se recebeu um número de chamado
+- Contate o TI diretamente se não receber a confirmação em breve
+- **Não tente abrir outro chamado agora** para evitar duplicação
+
+**Boa notícia:** Seu notebook corporativo está coberto por seguro que inclui danos acidentais, então você **não pagará** pelo conserto ou substituição. Apenas em casos de negligência comprovada (como deixar o equipamento sem supervisão em local público) a cobertura não se aplica.
+
+Se o chamado não tiver sido criado e você não receber confirmação em breve, entre em contato com o TI diretamente para abrir um novo chamado."
+Contrato da dupla,c13,1,False,saída fora do contrato,invalido,,2,1,abrir_chamado_ti!timeout,0,0,1,0,False,5199,298,0.006689,3.815828500002681,"Houve um tempo limite na criação do chamado. Não foi possível confirmar se ele foi criado. **Recomendo que você entre em contato direto com a TI da Aurora pelo telefone ou email da sua empresa** para relatar esse problema urgente de acesso imediatamente, pois seu chamado pode ou não ter sido aberto no sistema.
+
+Como você perdeu o celular do segundo fator, é importante comunicar isso à TI o quanto antes para que eles possam ajudá-lo a recuperar o acesso aos sistemas através de procedimentos alternativos de segurança."

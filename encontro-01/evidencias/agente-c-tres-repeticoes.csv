@@ -1,0 +1,144 @@
+arquitetura,caso,repeticao,acerto,motivo,desfecho,fontes,chamadas,tokens_entrada,tokens_saida,custo_usd,segundos,resposta
+c,c01,1,True,ok,responder,rh-trabalho-remoto,2,3483,282,0.004893,5.605821000004653,"Você pode trabalhar remotamente até **3 dias por semana** na Aurora Tecnologia. A quarta-feira é o dia presencial obrigatório para todos, reservado para rituais e reuniões de equipe. Os demais dias presenciais são combinados com sua liderança imediata."
+c,c02,1,True,ok,responder,ti-senhas-e-acesso,2,3469,403,0.005484,4.34995440000057,"Sua conta é bloqueada automaticamente após 5 tentativas de senha incorretas. Você tem duas opções:
+
+1. **Aguardar 30 minutos**: O desbloqueio acontece automaticamente após esse período.
+
+2. **Desbloquear imediatamente**: Use a opção ""Esqueci minha senha"" no portal de acesso. Essa opção valida sua identidade através do segundo fator de autenticação e permite que você crie uma nova senha na hora, desbloqueando a conta imediatamente.
+
+Se você perdeu o celular usado no segundo fator, abra um chamado urgente no portal de chamados de TI, pois nesse caso o desbloqueio exige validação por videochamada."
+c,c03,1,True,ok,responder,beneficios-plano-de-saude,2,3218,357,0.005003,4.057266799994977,"Você tem até 30 dias corridos após o nascimento do seu filho para incluí-lo no plano de saúde da empresa. 
+
+Se você fizer o pedido dentro desse prazo, não há carência. Após os 30 dias, a inclusão só é possível na janela anual de novembro, e nesse caso as carências do plano passam a vigorar.
+
+Para solicitar a inclusão, faça o pedido no Portal do Colaborador e anexe a certidão de nascimento."
+c,c04,1,True,ok,responder,rh-ferias,2,3447,379,0.005342,3.6071343000003253,"Sim, você pode dividir suas férias! De acordo com a política de férias da Aurora Tecnologia, as férias podem ser divididas em até três períodos, com as seguintes condições:
+
+- Um dos períodos deve ter **pelo menos 14 dias corridos**
+- Os outros dois períodos não podem ser menores que **5 dias corridos cada**
+
+Para solicitar as férias divididas, você deve fazer a solicitação no Portal do Colaborador com pelo menos 30 dias de antecedência e obter a aprovação da sua liderança imediata.
+
+Também é importante lembrar que as férias não podem começar nos dois dias que antecedem um feriado ou o descanso semanal."
+c,c05,1,True,ok,responder,ti-equipamentos,2,3490,587,0.006425,6.359385299998394,"O seguro cobre o seu notebook quebrado em casa. De acordo com a política de equipamentos da Aurora, o notebook corporativo tem seguro contratado pela empresa que cobre dano acidental e roubo, inclusive durante o trabalho em casa. Você não paga pelo conserto ou troca. Basta abrir um chamado no portal de chamados de TI em até 24 horas descrevendo o ocorrido. A reposição ou conserto será feito em até 5 dias úteis, e enquanto isso a TI pode emprestar um equipamento reserva."
+c,c06,1,True,ok,responder,ti-vpn-e-acesso-remoto,2,3283,409,0.005328,3.9776293999966583,"Quando você trabalha de casa, precisa conectar a **VPN corporativa** antes de acessar o sistema de ponto.
+
+Siga estes passos:
+
+1. **Conecte a VPN** usando o cliente que já vem instalado no seu notebook corporativo. Use o mesmo login e segundo fator da sua conta.
+
+2. **Se a VPN não conectar**, reinicie o cliente de VPN.
+
+3. **Se o problema persistir**, abra um chamado no portal de chamados de TI informando a mensagem de erro que está recebendo.
+
+**Dica extra:** Se você está usando uma rede pública de Wi-Fi, ela pode estar bloqueando a VPN. Nesse caso, tente usar o roteamento pelo celular (compartilhamento de internet)."
+c,c07,1,False,"desfecho 'responder', esperado 'nao_sei'",responder,beneficios-vale-refeicao,2,3113,296,0.004593,2.806486000001314,"O vale-refeição é de **R$ 45,00 por dia útil**, creditado no cartão até o último dia útil do mês anterior. O valor é proporcional aos dias úteis do mês e não é creditado nos dias de férias ou de licença. O desconto em folha é de 1% do valor recebido."
+c,c08,1,True,ok,nao_sei,,3,5344,389,0.007289,4.9090319000024465,Não encontrei documentos sobre a política de estacionamento do escritório. Recomendo entrar em contato com o RH ou com a administração do escritório para obter essa informação.
+c,c09,1,True,ok,escalar,,1,1307,131,0.001962,1.5380174000019906,Colaborador consulta sobre direito ao auxílio-creche para filho de 4 anos
+c,c10,1,True,ok,responder,rh-licencas beneficios-plano-de-saude,2,3882,551,0.006637,5.152590099998633,"Você tem direito a 20 dias corridos de licença-paternidade, contados a partir do dia do nascimento.
+
+**O que fazer para colocar o bebê no plano de saúde:**
+
+Você tem até 30 dias corridos após o nascimento para incluir seu filho como dependente. Se fizer isso dentro desse prazo, ele não terá carência. O pedido é feito no Portal do Colaborador, anexando a certidão de nascimento do bebê.
+
+**Importante:** Você precisa comunicar também a Pessoas & Cultura em até 2 dias úteis após o nascimento, enviando a certidão pelo Portal do Colaborador, para confirmar o período de licença-paternidade.
+
+Resumindo: 
+- Licença-paternidade: 20 dias
+- Inclusão no plano de saúde: até 30 dias após o nascimento, sem carência (faça o mais rápido possível!)
+- Coparticipação do bebê: 30% em consultas e exames"
+c,c01,2,True,ok,responder,rh-trabalho-remoto,2,3485,284,0.004905,2.9410230000066804,"Você pode trabalhar de casa até 3 dias por semana. A quarta-feira é o dia presencial obrigatório para todos os times, reservado para rituais e reuniões de equipe. Os demais dias presenciais são combinados com sua liderança imediata."
+c,c02,2,True,ok,responder,ti-senhas-e-acesso,2,3466,396,0.005446,3.780378199997358,"Sua conta foi bloqueada automaticamente após 5 tentativas de senha incorretas. Você tem duas opções:
+
+1. **Esperar 30 minutos**: A conta será desbloqueada automaticamente após esse período.
+
+2. **Desbloquear imediatamente**: Use a opção ""Esqueci minha senha"" no portal de acesso. Essa opção valida sua identidade pelo segundo fator (autenticação em dois fatores) e permite que você crie uma nova senha na hora, desbloqueando a conta.
+
+Se você perdeu o celular usado no segundo fator, abra um chamado urgente no portal de chamados de TI, onde o desbloqueio será feito mediante validação por videochamada."
+c,c03,2,True,ok,responder,beneficios-plano-de-saude,2,2976,343,0.004691,3.662129399999685,"Você tem até 30 dias corridos após o nascimento do seu filho para incluí-lo no plano de saúde. Se fizer a inclusão dentro desse prazo, não há carência.
+
+O pedido deve ser feito no Portal do Colaborador, anexando a certidão de nascimento.
+
+Se passar dos 30 dias, a inclusão só poderá ser feita na janela anual de novembro, e aí valerão as carências do plano."
+c,c04,2,True,ok,responder,rh-ferias,2,3446,392,0.005406,3.7432193999993615,"Sim, você pode dividir suas férias em até três períodos. A divisão segue estas regras:
+
+- Um dos períodos deve ter pelo menos 14 dias corridos
+- Os outros dois períodos não podem ser menores que 5 dias corridos cada
+
+Importante: as férias não podem começar nos dois dias que antecedem um feriado ou o descanso semanal.
+
+Para solicitar, você deve usar o Portal do Colaborador com pelo menos 30 dias de antecedência, e a solicitação precisa ser aprovada pela sua liderança imediata.
+
+Se desejar, também é possível vender até 10 dias de férias (abono pecuniário), desde que o pedido seja feito junto com a solicitação das férias."
+c,c05,2,True,ok,responder,ti-equipamentos,2,3485,393,0.00545,4.524258199999167,"O seguro cobre! Os notebooks corporativos da Aurora Tecnologia têm seguro contratado pela empresa que cobre dano acidental e roubo, inclusive fora do escritório e durante o trabalho em casa. Você não paga pelo conserto ou pela troca.
+
+Para proceder, abra um chamado no portal de chamados de TI em até 24 horas descrevendo o ocorrido. A reposição ou conserto é feito em até 5 dias úteis, e enquanto isso, a TI pode emprestar um equipamento reserva se necessário.
+
+Observação: A cobertura não se aplica apenas em casos de negligência (como deixar o equipamento sem supervisão em local público)."
+c,c06,2,True,ok,responder,ti-vpn-e-acesso-remoto,2,3558,577,0.006443,5.211211699999694,"Para acessar o sistema de ponto trabalhando de casa, você precisa estar conectado à VPN corporativa. Verifique se a VPN está ativa antes de abrir o sistema. Se não conectar, reinicie o cliente de VPN. Se o problema persistir, abra um chamado de TI com a mensagem de erro. Se estiver em rede pública de Wi-Fi que bloqueia VPN, use roteamento pelo celular."
+c,c07,2,False,"desfecho 'responder', esperado 'nao_sei'",responder,beneficios-vale-refeicao,2,3114,306,0.004644,3.2378076999957557,"O vale-refeição na Aurora Tecnologia é de **R$ 45,00 por dia útil**. O valor é creditado no cartão até o último dia útil do mês anterior e é proporcional aos dias úteis do mês. Importante: o benefício não é creditado nos dias de férias ou de licença, e há um desconto em folha de 1% do valor recebido."
+c,c08,2,True,ok,nao_sei,,3,6075,389,0.00802,4.330967699999746,Não encontrei informações sobre política de estacionamento nos documentos de política interna disponíveis. Recomendo que você entre em contato com o RH ou com a administração do escritório para obter essas informações.
+c,c09,2,True,ok,escalar,,1,1307,145,0.002032,1.7264523999983794,Colaborador pergunta se tem direito ao auxílio-creche para filho de 4 anos
+c,c10,2,True,ok,responder,rh-licencas beneficios-plano-de-saude,3,6611,653,0.009876,6.303976499999408,"Sobre sua licença-paternidade: você tem direito a **20 dias corridos**, contados a partir do dia do nascimento ou da adoção. Para aproveitar esses 20 dias, é importante comunicar Pessoas & Cultura em até 2 dias úteis após o nascimento, enviando a certidão pelo Portal do Colaborador.
+
+Sobre o plano de saúde do bebê: você precisa fazer um pedido no Portal do Colaborador para incluir seu filho como dependente. O prazo é de **até 30 dias corridos após o nascimento**. Dentro desse prazo, não há carência. Você vai precisar anexar a certidão de nascimento ao fazer o pedido. 
+
+Importante: se passar dos 30 dias, a inclusão só poderá ser feita na janela anual de novembro, e aí passarão a valer as carências do plano. Por isso, agilize esse processo nos primeiros 30 dias!"
+c,c01,3,True,ok,responder,rh-trabalho-remoto,2,3484,338,0.005174,3.146020000000135,"Você pode trabalhar remotamente até 3 dias por semana na Aurora Tecnologia. 
+
+A quarta-feira é o dia presencial obrigatório para todos os times, reservado para rituais e reuniões de equipe. Os demais dias presenciais são combinados com sua liderança imediata.
+
+Além disso, a empresa paga um auxílio home office de R$ 120,00 mensais (creditado junto com o salário) para ajudar com internet e energia."
+c,c02,3,True,ok,responder,ti-senhas-e-acesso,2,3471,416,0.005551,4.053410200001963,"Sua conta foi bloqueada automaticamente após 5 tentativas de senha incorreta. Você tem duas opções:
+
+1. **Aguardar 30 minutos**: A conta se desbloqueará sozinha depois desse período.
+
+2. **Desbloquear imediatamente**: Use a opção ""Esqueci minha senha"" no portal de acesso. Essa opção valida sua identidade através do segundo fator de autenticação e permite criar uma nova senha na hora, sem aguardar.
+
+Se você perdeu o celular usado no segundo fator de autenticação, abra um chamado urgente no portal de chamados de TI. Nesse caso, o desbloqueio exigirá validação por videochamada."
+c,c03,3,True,ok,responder,beneficios-plano-de-saude,2,2976,380,0.004876,3.831275299999106,"Você tem um prazo de até 30 dias corridos após o nascimento para incluir seu recém-nascido no plano de saúde da empresa. 
+
+Se você incluir dentro desse período, seu filho não terá carência. O pedido é feito no Portal do Colaborador, anexando a certidão de nascimento.
+
+Depois de 30 dias, a inclusão só será possível na janela anual de novembro, e seu filho estará sujeito às carências do plano.
+
+Observação: o dependente terá coparticipação de 30% nas consultas e exames."
+c,c04,3,True,ok,responder,rh-ferias,2,3448,358,0.005238,3.672377499999129,"Sim, você pode dividir suas férias em até três períodos diferentes. As regras são:
+
+- **Um período** deve ter no mínimo **14 dias corridos**
+- **Os outros dois períodos** não podem ser menores que **5 dias corridos** cada
+
+Além disso, é importante saber que as férias não podem começar nos dois dias que antecedem um feriado ou seu descanso semanal.
+
+Para solicitar, você deve usar o Portal do Colaborador com pelo menos 30 dias de antecedência, e a solicitação precisa ser aprovada pela sua liderança imediata."
+c,c05,3,True,ok,responder,ti-equipamentos,2,3609,492,0.006069,5.7782929000022705,"Sim, o seguro cobre! Os notebooks corporativos têm seguro contratado pela empresa que cobre dano acidental e roubo, inclusive fora do escritório e durante o trabalho em casa.
+
+O que você precisa fazer:
+1. Abra um chamado no portal de chamados de TI em até 24 horas, descrevendo o ocorrido
+2. Você não pagará pelo conserto ou pela troca do equipamento
+
+A reposição ou conserto é feito em até 5 dias úteis. Enquanto isso, a TI pode emprestar um equipamento reserva se precisar.
+
+Observação: A cobertura não se aplica em caso de negligência (como deixar o equipamento sem supervisão em local público), mas sua situação de quebra em casa está definitivamente coberta pelo seguro."
+c,c06,3,True,ok,responder,ti-vpn-e-acesso-remoto,2,3934,503,0.006449,4.939004799998656,"Para acessar o sistema de ponto trabalhando de casa, você precisa estar conectado à VPN corporativa antes de abrir o sistema.
+
+Siga estes passos:
+
+1. **Conecte a VPN primeiro** - O cliente de VPN já está instalado no seu notebook corporativo e usa o mesmo login e segundo fator da sua conta.
+
+2. **Se a VPN não conectar:**
+   - Reinicie o cliente de VPN
+   
+3. **Se o problema persistir:**
+   - Abra um chamado no portal de chamados de TI informando a mensagem de erro
+
+4. **Se estiver usando rede Wi-Fi pública:**
+   - A rede pode estar bloqueando a VPN. Tente usar o roteamento pelo celular (compartilhamento de internet pelo seu telefone)
+
+Basicamente: VPN conectada → sistema de ponto abre normalmente!"
+c,c07,3,False,"desfecho 'responder', esperado 'nao_sei'",responder,beneficios-vale-refeicao,2,3114,279,0.004509,2.8182753000000957,"O vale-refeição é de R$ 45,00 por dia útil. O crédito é feito no cartão até o último dia útil do mês anterior. O valor é proporcional aos dias úteis do mês e não é creditado nos dias de férias ou de licença."
+c,c08,3,True,ok,nao_sei,,3,5824,427,0.007959,5.012585799995577,Não encontrei documentos sobre a política de estacionamento do escritório na base de políticas internas da Aurora Tecnologia. Recomendo entrar em contato com o time de Pessoas & Cultura ou com a administração do escritório para obter essa informação.
+c,c09,3,True,ok,escalar,,2,3205,254,0.004475,2.866471899993485,Dúvida sobre elegibilidade para auxílio-creche de filho com 4 anos
+c,c10,3,True,ok,responder,rh-licencas beneficios-plano-de-saude,2,4121,752,0.007881,6.865405799995642,"Você tem direito a 20 dias corridos de licença-paternidade, contados a partir do nascimento. Precisa comunicar Pessoas & Cultura em até 2 dias úteis após o nascimento, enviando a certidão pelo Portal do Colaborador.
+
+Para incluir o bebê no plano de saúde: faça a solicitação no Portal do Colaborador dentro de 30 dias após o nascimento, anexando a certidão. Se fizer dentro desse prazo, não há carência. O dependente terá coparticipação de 30% nas consultas e exames. Após 30 dias, a inclusão só é possível na janela anual de novembro com carência aplicável."
