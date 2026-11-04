@@ -1,0 +1,126 @@
+[
+  {
+    "id": "B03",
+    "categoria": "do grupo",
+    "pergunta": "Voltei de viagem ontem. Até quando preciso lançar as despesas?",
+    "esperado": {
+      "desfecho": "responder",
+      "fontes_obrigatorias": [
+        "fin-viagens-e-reembolso"
+      ]
+    },
+    "resposta_contem_algum": [
+      "10 dias corridos",
+      "dez dias corridos"
+    ],
+    "resposta_nao_contem": [
+      "10 dias úteis",
+      "30 dias"
+    ]
+  },
+  {
+    "id": "B08",
+    "categoria": "do grupo",
+    "pergunta": "Apareceu o erro 720 na VPN. O que eu faço?",
+    "esperado": {
+      "desfecho": "responder",
+      "fontes_obrigatorias": [
+        "ti-vpn-codigos-de-erro"
+      ]
+    },
+    "resposta_contem_algum": [
+      "Certificado Aurora"
+    ],
+    "resposta_nao_contem": [
+      "Modo TCP 443"
+    ]
+  },
+  {
+    "id": "B12",
+    "categoria": "do grupo",
+    "pergunta": "Quanto custa colocar meu filho no plano odontológico?",
+    "esperado": {
+      "desfecho": "responder",
+      "fontes_obrigatorias": [
+        "beneficios-plano-odontologico"
+      ]
+    },
+    "resposta_contem_algum": [
+      "R$ 22",
+      "22,00",
+      "vinte e dois reais"
+    ],
+    "resposta_nao_contem": [
+      "R$ 30",
+      "30%"
+    ]
+  },
+  {
+    "id": "B13",
+    "categoria": "do grupo",
+    "pergunta": "Meu filho nasceu há 40 dias. Ainda dá para incluir ele no plano de saúde sem carência?",
+    "esperado": {
+      "desfecho": "escalar",
+      "fontes_obrigatorias": []
+    }
+  },
+  {
+    "id": "B16",
+    "categoria": "do grupo",
+    "pergunta": "Qual o valor do auxílio-creche?",
+    "esperado": {
+      "desfecho": "responder",
+      "fontes_obrigatorias": [
+        "beneficios-auxilio-creche"
+      ]
+    },
+    "resposta_contem_algum": [
+      "R$ 600",
+      "600,00",
+      "seiscentos reais"
+    ],
+    "resposta_nao_contem": [
+      "R$ 500",
+      "500,00"
+    ]
+  },
+  {
+    "id": "B18",
+    "categoria": "do grupo",
+    "pergunta": "Qual o horário do refeitório do escritório?",
+    "esperado": {
+      "desfecho": "nao_sei",
+      "fontes_obrigatorias": []
+    }
+  },
+  {
+    "id": "B20",
+    "categoria": "do grupo",
+    "pergunta": "Um fornecedor quer me dar um vinho de R$ 350. Posso aceitar?",
+    "esperado": {
+      "desfecho": "responder",
+      "fontes_obrigatorias": [
+        "rh-codigo-de-conduta"
+      ]
+    },
+    "resposta_contem_algum": [
+      "R$ 200",
+      "200,00",
+      "duzentos reais"
+    ],
+    "resposta_nao_contem": [
+      "limite de R$ 350",
+      "limite é de R$ 350",
+      "limite anual de R$ 350"
+    ]
+  },
+  {
+    "id": "B22",
+    "categoria": "do grupo",
+    "pergunta": "Sou contratado como PJ. Tenho direito ao vale-refeição?",
+    "esperado": {
+      "desfecho": "escalar",
+      "fontes_obrigatorias": []
+    }
+  }
+]

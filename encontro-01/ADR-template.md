@@ -1,4 +1,4 @@
-# Agent Decision Record — Equipe do projeto
+# Agent Decision Record — ValidAI
 
 **Caso:** Dúvidas Internas do Colaborador — Aurora Tecnologia
 **Data:** 01/10/2026
@@ -35,7 +35,7 @@ Medições de 01/10/2026 com `claude-haiku-4-5-20251001`. A e B rodaram uma vez;
 
 O indicador de variação do executor compara somente o campo `desfecho`; não compara texto, fontes, custo ou quantidade de chamadas. Em C, as chamadas variaram de 1 a 3 por pergunta mesmo com zero variação de desfecho. A consistência do erro de c07 não representa confiabilidade.
 
-**Evidências versionáveis:**
+**Evidências:**
 
 - [A e B — execução atual](evidencias/comparacao-a-b.csv): 20 resultados, sem erros de API.
 - [C — três repetições](evidencias/agente-c-tres-repeticoes.csv): 30 resultados, sem erros de API.
@@ -54,7 +54,7 @@ A atingiu o mesmo acerto de C, com aproximadamente 30% menos custo por acerto e 
 
 **Escopo de autonomia:** localizar informações no corpus e elaborar respostas gerais com fontes; reconhecer ausência e conflitos com `nao_sei`; encaminhar elegibilidade pessoal ao RH. O sistema não pode confirmar direito individual, alterar cadastros, conceder benefícios nem executar ações nos sistemas da empresa.
 
-**Critério de parada:** A faz uma chamada por pergunta, sem loop. Na avaliação de C, o limite foi de 6 chamadas; ao atingir esse limite sem concluir, o código encaminha ao RH. Esse teto permite buscas complementares e uma resposta final, contendo gasto e duração. Nenhuma das 30 execuções de C chegou ao limite. O loop implementado é equivalente ao da solução de referência em `solucao-encontro-01/arquitetura_c.py`.
+**Critério de parada:** A faz uma chamada por pergunta, sem loop. Na avaliação de C, o limite foi de 6 chamadas; ao atingir esse limite sem concluir, o código encaminha ao RH. Esse teto permite buscas complementares e uma resposta final, contendo gasto e duração. Nenhuma das 30 execuções de C chegou ao limite.
 
 ## 4. Trade-offs assumidos
 
@@ -71,14 +71,3 @@ Os limites abaixo são critérios de engenharia propostos para futuras mediçõe
 1. **Troca para workflow:** se o custo por acerto de A ultrapassar US$ 0,00600 em duas avaliações completas consecutivas, substituir A por um workflow B revisado com recuperação de múltiplas áreas. Antes da troca, esse workflow deve alcançar 10/10 em três rodadas, acertar c07 e c09 em todas e manter custo por acerto de até US$ 0,00300. A versão B medida aqui ainda não atende a esse critério.
 2. **Reavaliação da autonomia:** considerar C se superar A em pelo menos um acerto por rodada nas mesmas três rodadas, acertar c07 e c09 em todas, custar até US$ 0,00700 por acerto e manter p95 abaixo de 8 s. C atualmente não demonstrou o ganho exigido.
 3. **Falha de segurança ou qualidade:** qualquer confirmação indevida de elegibilidade ou resposta afirmativa diante do conflito conhecido suspende a liberação automática e mantém o atendimento sob revisão do RH até a correção e nova avaliação. O erro atual de c07 já impede a liberação.
-
-## 6. Reprodução
-
-A partir da raiz do repositório, com a chave válida no `.env`:
-
-```powershell
-.\.venv\Scripts\python.exe -X utf8 encontro-01\rodar.py --arq a b --detalhe
-.\.venv\Scripts\python.exe -X utf8 encontro-01\rodar.py --arq c --repeticoes 3 --detalhe
-```
-
-A pasta `evidencias/` contém as cópias usadas neste ADR e pode ser versionada. `resultados/` continua sendo a saída local ignorada pelo Git.

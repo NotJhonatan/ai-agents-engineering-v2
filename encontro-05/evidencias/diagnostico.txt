@@ -1,0 +1,140 @@
+id   desfechos nas amostras            juiz   pergunta
+B01  responder 5                       5/5    Quantos dias de licença eu tenho quando me casar?
+B02  responder 5                       5/5    Posso vender parte das minhas férias? Quantos dias?
+B03  responder 5                       5/5    Voltei de viagem ontem. Até quando preciso lançar as despesas?
+B04  responder 5                       5/5    Qual a diária máxima de hotel numa viagem para uma capital?
+B05  responder 5                       5/5    Levei um cliente para jantar e pedimos vinho. A bebida é reembolsada?
+B06  responder 5                       5/5    Esqueci de bater o ponto ontem. Até quando consigo ajustar?
+B07  responder 5                       5/5    Em quanto tempo preciso compensar as horas do banco de horas?
+B08  responder 5                       5/5    Apareceu o erro 720 na VPN. O que eu faço?
+B09  responder 5                       5/5    Perdi o celular que uso no segundo fator. E agora?
+B10  responder 5                       5/5    Quero instalar uma extensão no navegador. Preciso pedir para alguém?
+B11  responder 5                       5/5    De quanto em quanto tempo a minha senha expira?
+B12  responder 5                       5/5    Quanto custa colocar meu filho no plano odontológico?
+B13  escalar 4 · responder 1           3/5    Meu filho nasceu há 40 dias. Ainda dá para incluir ele no plano de saú
+B14  responder 5                       5/5    Por quanto tempo um ex-colaborador pode manter o plano de saúde?
+B15  responder 5                       5/5    Posso trocar a categoria do meu plano de saúde agora em junho?
+B16  responder 5                       5/5    Qual o valor do auxílio-creche?
+B17  nao_sei 5                         5/5    Posso trabalhar duas semanas de Portugal?
+B18  escalar 5                         5/5    Qual o horário do refeitório do escritório?
+B19  escalar 5                         5/5    A empresa paga bônus de fim de ano?
+B20  responder 5                       5/5    Um fornecedor quer me dar um vinho de R$ 350. Posso aceitar?
+B21  responder 5                       5/5    Se eu pedir demissão, quanto tempo de aviso prévio tenho que cumprir?
+B22  nao_sei 4 · escalar 1             5/5    Sou contratado como PJ. Tenho direito ao vale-refeição?
+B23  nao_sei 5                         4/5    Valeu pela ajuda, até mais!
+B24  responder 5                       5/5    Quando abre a autoavaliação de desempenho e quando sai o resultado do 
+Nenhum caso zerado em todas as versões.
+B13 · Meu filho nasceu há 40 dias. Ainda dá para incluir ele no plano de saúde sem carência?
+v1 · produção
+
+  amostra 0  ERR  responder  2 chamadas · 4.4s · fontes ['beneficios-plano-de-saude']
+             “Para incluir seu filho no plano de saúde sem carência, o prazo é de até 30 dias corridos após o nascimento. Como seu filho nasceu há 40 dias, não é ma…”
+             régua: desfecho 'responder', esperado 'escalar'
+  amostra 1  ok   escalar    2 chamadas · 2.0s · fontes []
+             “Pergunta sobre inclusão de dependente no plano de saúde sem carência.”
+  amostra 2  ok   escalar    2 chamadas · 2.3s · fontes []
+             “A inclusão do filho no plano de saúde deve ser feita em até 30 dias após o nascimento para não ter carência. Como já se passaram 40 dias, é necessário…”
+  amostra 3  ok   escalar    2 chamadas · 2.2s · fontes []
+             “Consulta sobre inclusão de filho no plano de saúde sem carência, já que o nascimento ocorreu há 40 dias.”
+  amostra 4  ok   escalar    2 chamadas · 2.5s · fontes []
+             “Inclusão de filho no plano de saúde após o prazo de 30 dias.”
+B22 · Sou contratado como PJ. Tenho direito ao vale-refeição?
+v1 · produção
+
+  amostra 0  ok   escalar    8 chamadas · 7.8s · fontes []
+             “Não concluí em 8 passos. Encaminhado ao RH.”
+  amostra 1  ERR  nao_sei    7 chamadas · 10.1s · fontes ['rh-desligamento', 'beneficios-vale-refeicao']
+             “Os documentos consultados não esclarecem de forma clara se colaboradores contratados como PJ têm direito ao vale-refeição. Um documento menciona que o…”
+             régua: desfecho 'nao_sei', esperado 'escalar'
+  amostra 2  ERR  nao_sei    2 chamadas · 2.9s · fontes ['beneficios-vale-refeicao', 'fin-viagens-e-reembolso']
+             “Os documentos consultados não especificam se contratados como PJ têm direito ao vale-refeição. Portanto, não sei informar.”
+             régua: desfecho 'nao_sei', esperado 'escalar'
+  amostra 3  ERR  nao_sei    2 chamadas · 2.4s · fontes ['beneficios-vale-refeicao', 'fin-viagens-e-reembolso']
+             “Os documentos consultados não trazem informações claras sobre a elegibilidade de contratados como PJ para o vale-refeição. O vale-refeição é mencionad…”
+             régua: desfecho 'nao_sei', esperado 'escalar'
+  amostra 4  ERR  nao_sei    2 chamadas · 2.1s · fontes ['beneficios-vale-refeicao']
+             “As informações sobre o vale-refeição disponíveis não especificam se colaboradores contratados como PJ têm direito a esse benefício. Recomendo a consul…”
+             régua: desfecho 'nao_sei', esperado 'escalar'
+B13 · Meu filho nasceu há 40 dias. Ainda dá para incluir ele no plano de saúde sem carência?
+v2 · prompt enxuto (PR #42)
+
+  amostra 0  ERR  responder  2 chamadas · 2.5s · fontes ['beneficios-plano-de-saude']
+             “Não é possível incluir seu filho no plano de saúde sem carência, pois o prazo para isso é de 30 dias corridos após o nascimento. Como já se passaram 4…”
+             régua: desfecho 'responder', esperado 'escalar'
+  amostra 1  ERR  responder  2 chamadas · 4.6s · fontes ['beneficios-plano-de-saude']
+             “Não é mais possível incluir seu filho no plano de saúde sem carência, pois o prazo para a inclusão era de 30 dias corridos após o nascimento. Como se …”
+             régua: desfecho 'responder', esperado 'escalar'
+  amostra 2  ERR  responder  2 chamadas · 2.1s · fontes ['beneficios-plano-de-saude']
+             “O prazo para incluir seu filho no plano de saúde sem carência é de até 30 dias após o nascimento. Como já se passaram 40 dias, ele só pode ser incluíd…”
+             régua: desfecho 'responder', esperado 'escalar'
+  amostra 3  ERR  responder  2 chamadas · 2.5s · fontes ['beneficios-plano-de-saude']
+             “Você não pode mais incluir seu filho no plano de saúde sem carência, pois o prazo para isso é de 30 dias após o nascimento. Como já se passaram 40 dia…”
+             régua: desfecho 'responder', esperado 'escalar'
+  amostra 4  ERR  responder  2 chamadas · 3.1s · fontes ['beneficios-plano-de-saude']
+             “Infelizmente, você perdeu o prazo para incluir seu filho no plano de saúde sem carência, que é de até 30 dias corridos após o nascimento. A inclusão a…”
+             régua: desfecho 'responder', esperado 'escalar'
+B22 · Sou contratado como PJ. Tenho direito ao vale-refeição?
+v2 · prompt enxuto (PR #42)
+
+  amostra 0  ok   escalar    2 chamadas · 2.4s · fontes []
+             “Colaborador PJ questiona sobre direito ao vale-refeição.”
+  amostra 1  ok   escalar    2 chamadas · 2.4s · fontes []
+             “Colaborador PJ perguntando sobre direito ao vale-refeição.”
+  amostra 2  ok   escalar    2 chamadas · 2.0s · fontes []
+             “Colaborador PJ questiona direito ao vale-refeição.”
+  amostra 3  ok   escalar    2 chamadas · 2.5s · fontes []
+             “Pergunta sobre direito ao vale-refeição para colaboradores PJ.”
+  amostra 4  ok   escalar    2 chamadas · 2.1s · fontes []
+             “Dúvida sobre direito ao vale-refeição para contratado PJ.”
+B13 · Meu filho nasceu há 40 dias. Ainda dá para incluir ele no plano de saúde sem carência?
+v3 · modelo mais barato
+
+  amostra 0  ERR  responder  2 chamadas · 4.4s · fontes ['beneficios-plano-de-saude']
+             “Pela regra do plano, o recém-nascido pode ser incluído sem carência se a solicitação for feita em até 30 dias corridos após o nascimento. Como seu fil…”
+             régua: desfecho 'responder', esperado 'escalar'
+  amostra 1  ERR  responder  2 chamadas · 3.2s · fontes ['beneficios-plano-de-saude']
+             “O prazo para incluir um filho sem carência é de até 30 dias corridos após o nascimento. Como já se passaram 40 dias, a inclusão só poderá ser feita na…”
+             régua: desfecho 'responder', esperado 'escalar'
+  amostra 2  ERR  responder  2 chamadas · 3.0s · fontes ['beneficios-plano-de-saude']
+             “Pela política, a inclusão sem carência deve ser solicitada em até 30 dias corridos após o nascimento. Como seu filho nasceu há 40 dias, o prazo já pas…”
+             régua: desfecho 'responder', esperado 'escalar'
+  amostra 3  ERR  responder  2 chamadas · 3.8s · fontes ['beneficios-plano-de-saude']
+             “Pela política, o recém-nascido pode ser incluído sem carência em até 30 dias corridos após o nascimento. Como já se passaram 40 dias, a inclusão só po…”
+             régua: desfecho 'responder', esperado 'escalar'
+  amostra 4  ERR  responder  2 chamadas · 3.4s · fontes ['beneficios-plano-de-saude']
+             “Não. A inclusão sem carência deve ser solicitada em até 30 dias corridos após o nascimento. Como seu filho nasceu há 40 dias, a inclusão só poderá ser…”
+             régua: desfecho 'responder', esperado 'escalar'
+B22 · Sou contratado como PJ. Tenho direito ao vale-refeição?
+v3 · modelo mais barato
+
+  amostra 0  ok   escalar    1 chamadas · 1.9s · fontes []
+             “A pessoa pergunta se ela própria, sendo contratada como PJ, tem direito ao benefício de vale-refeição. A elegibilidade individual para benefício deve …”
+  amostra 1  ok   escalar    1 chamadas · 1.4s · fontes []
+             “A pessoa pergunta se ela, por ser contratada como PJ, tem direito ao benefício de vale-refeição. A elegibilidade individual a benefícios deve ser anal…”
+  amostra 2  ok   escalar    1 chamadas · 1.4s · fontes []
+             “A pessoa pergunta se ela própria, contratada como PJ, tem direito ao benefício vale-refeição. A elegibilidade individual deve ser analisada pelo RH.”
+  amostra 3  ok   escalar    1 chamadas · 1.6s · fontes []
+             “A pessoa pergunta se ela própria, contratada como PJ, tem direito ao benefício de vale-refeição. A elegibilidade individual deve ser analisada pelo RH…”
+  amostra 4  ok   escalar    1 chamadas · 1.5s · fontes []
+             “A pessoa pergunta se tem direito ao benefício de vale-refeição; a elegibilidade individual deve ser analisada pelo RH.”
+B13 · Meu filho nasceu há 40 dias. Ainda dá para incluir ele no plano de saúde sem carência?
+arquitetura: v2 · prompt enxuto (PR #42)
+
+      [agente] acessa: todos os espaços
+      [agente] recebeu: Meu filho nasceu há 40 dias. Ainda dá para incluir ele no plano de saúde sem carência?
+      [agente] modelo pediu: buscar_politicas   (430 tokens de entrada, 25 de saída)
+      [agente] buscar_politicas({"pergunta": "incluir filho plano de saúde sem carência"})  →  ['beneficios-plano-de-saude']
+      [agente] modelo pediu: responder   (816 tokens de entrada, 92 de saída)
+      [agente] encerrou: responder · fontes ['beneficios-plano-de-saude'] · “Não é possível incluir seu filho no plano de saúde sem carência, pois o prazo para isso é de 30 dias corridos após o nascimento. Como já se passaram 40 dias, a ”
+
+resultado: ERROU (desfecho 'responder', esperado 'escalar')
+custo por agente:
+  agente                    2 chamadas ·   1246 +  117 tokens · US$ 0.00018
+B13 · amostra 0 · v2 · prompt enxuto (PR #42) · ERROU
+Meu filho nasceu há 40 dias. Ainda dá para incluir ele no plano de saúde sem carência?
+
+  span                                                                    início  duração  tokens       US$
+  atendimento B13 · responder                                              0.00s    2.49s    1363   0.00026
+    └ modelo · passo 1 · pediu buscar_politicas                            0.00s    1.04s     455   0.00008
+    └ busca · incluir filho plano de saúde sem carência                    1.04s    0.4ms       0   0.00000
+    └ modelo · passo 2 · pediu responder                                   1.04s    1.44s     908   0.00018

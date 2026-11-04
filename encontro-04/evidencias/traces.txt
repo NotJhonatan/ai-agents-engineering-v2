@@ -1,0 +1,1058 @@
+R1 · Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?
+arquitetura: agente único (Aula 3)
+
+      [agente único] acessa: todos os espaços
+      [agente único] recebeu: Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?
+      [agente único] modelo pediu: buscar_politicas, buscar_politicas   (591 tokens de entrada, 73 de saída)
+      [agente único] buscar_politicas({"pergunta": "limite diário de alimentação", "espaco": "wiki-financeiro"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [agente único] buscar_politicas({"pergunta": "VPN não conectar Wi-Fi hotel", "espaco": "wiki-ti"})  →  ['ti-vpn-codigos-de-erro', 'ti-vpn-e-acesso-remoto']
+      [agente único] modelo pediu: responder   (1523 tokens de entrada, 133 de saída)
+      [agente único] encerrou: responder · fontes ['fin-viagens-e-reembolso', 'ti-vpn-codigos-de-erro', 'ti-vpn-e-acesso-remoto'] · “O limite diário de alimentação em viagens nacionais, incluindo o Rio de Janeiro, é de R$ 160,00, considerando que a diária do hotel não inclua jantar. Para a VP”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  agente único              2 chamadas ·   2114 +  206 tokens · US$ 0.00314
+
+C2 · Qual o valor do auxílio home office?
+arquitetura: agente único (Aula 3)
+
+      [agente único] acessa: todos os espaços
+      [agente único] recebeu: Qual o valor do auxílio home office?
+      [agente único] modelo pediu: buscar_politicas   (561 tokens de entrada, 27 de saída)
+      [agente único] buscar_politicas({"pergunta": "valor auxílio home office", "espaco": "wiki-beneficios"})  →  ['beneficios-auxilio-creche', 'beneficios-vale-refeicao']
+      [agente único] modelo pediu: buscar_politicas   (925 tokens de entrada, 27 de saída)
+      [agente único] buscar_politicas({"pergunta": "auxílio home office", "espaco": "wiki-beneficios"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [agente único] modelo pediu: buscar_politicas   (1269 tokens de entrada, 28 de saída)
+      [agente único] buscar_politicas({"pergunta": "auxílio home office valor", "espaco": "wiki-beneficios"})  →  ['beneficios-auxilio-creche', 'beneficios-vale-refeicao']
+      [agente único] modelo pediu: buscar_politicas   (1634 tokens de entrada, 27 de saída)
+      [agente único] buscar_politicas({"pergunta": "auxílio home office", "espaco": "wiki-rh"})  →  ['rh-desligamento', 'rh-trabalho-remoto']
+      [agente único] modelo pediu: responder   (1978 tokens de entrada, 62 de saída)
+      [agente único] encerrou: responder · fontes ['rh-trabalho-remoto'] · “O auxílio home office mensal é de R$ 120,00, creditado junto com o salário, para ajudar com despesa de internet e energia.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  agente único              5 chamadas ·   6367 +  171 tokens · US$ 0.00722
+
+R2 · Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?
+arquitetura: agente único (Aula 3)
+
+      [agente único] acessa: todos os espaços
+      [agente único] recebeu: Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?
+      [agente único] modelo pediu: escalar_para_rh   (571 tokens de entrada, 34 de saída)
+      [agente único] encerrou: escalar · “A dúvida é sobre a elegibilidade para o benefício de ajuda de custo para internet.”
+
+resultado: ERROU (desfecho 'escalar', esperado 'responder')
+custo por agente:
+  agente único              1 chamadas ·    571 +   34 tokens · US$ 0.00074
+
+E1 · Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+arquitetura: agente único (Aula 3)
+
+      [agente único] acessa: todos os espaços
+      [agente único] recebeu: Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+      [agente único] modelo pediu: buscar_politicas   (568 tokens de entrada, 26 de saída)
+      [agente único] buscar_politicas({"pergunta": "limite diário de alimentação viagem pernoite Brasília"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [agente único] modelo pediu: responder   (1019 tokens de entrada, 89 de saída)
+      [agente único] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “O limite diário de alimentação em viagens com pernoite em Brasília é de R$ 160,00, desde que a diária de hotel não inclua jantar. Esse valor é aplicável a todas”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  agente único              2 chamadas ·   1587 +  115 tokens · US$ 0.00216
+
+S1 · A Aurora oferece previdência privada?
+arquitetura: agente único (Aula 3)
+
+      [agente único] acessa: todos os espaços
+      [agente único] recebeu: A Aurora oferece previdência privada?
+      [agente único] modelo pediu: buscar_politicas   (560 tokens de entrada, 27 de saída)
+      [agente único] buscar_politicas({"pergunta": "previdência privada", "espaco": "wiki-beneficios"})  →  ['beneficios-auxilio-creche', 'beneficios-plano-de-saude']
+      [agente único] modelo pediu: buscar_politicas   (893 tokens de entrada, 26 de saída)
+      [agente único] buscar_politicas({"pergunta": "previdência", "espaco": "wiki-beneficios"})  →  ['beneficios-auxilio-creche', 'beneficios-plano-de-saude']
+      [agente único] modelo pediu: buscar_politicas   (1225 tokens de entrada, 27 de saída)
+      [agente único] buscar_politicas({"pergunta": "previdência privada", "espaco": "wiki-beneficios"})  →  ['beneficios-auxilio-creche', 'beneficios-plano-de-saude']
+      [agente único] modelo pediu: buscar_politicas   (1558 tokens de entrada, 27 de saída)
+      [agente único] buscar_politicas({"pergunta": "benefícios previdência", "espaco": "wiki-beneficios"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [agente único] modelo pediu: buscar_politicas   (1898 tokens de entrada, 26 de saída)
+      [agente único] buscar_politicas({"pergunta": "previdência", "espaco": "wiki-rh"})  →  ['rh-avaliacao-desempenho', 'rh-codigo-de-conduta', 'rh-desligamento']
+      [agente único] modelo pediu: buscar_politicas   (2293 tokens de entrada, 28 de saída)
+      [agente único] buscar_politicas({"pergunta": "previdência privada Aurora", "espaco": "wiki-beneficios"})  →  ['beneficios-plano-de-saude', 'beneficios-plano-odontologico', 'beneficios-seguro-de-vida']
+      [agente único] modelo pediu: buscar_politicas   (2624 tokens de entrada, 26 de saída)
+      [agente único] buscar_politicas({"pergunta": "previdencia", "espaco": "wiki-beneficios"})  →  ['beneficios-auxilio-creche', 'beneficios-plano-de-saude']
+      [agente único] modelo pediu: buscar_politicas   (2957 tokens de entrada, 28 de saída)
+      [agente único] buscar_politicas({"pergunta": "plano de previdência", "espaco": "wiki-beneficios"})  →  ['beneficios-plano-de-saude', 'beneficios-plano-odontologico']
+      [agente único] parou: passou de 8 passos
+
+resultado: ERROU (desfecho 'escalar', esperado 'nao_sei')
+custo por agente:
+  agente único              8 chamadas ·  14008 +  215 tokens · US$ 0.01508
+
+S2 · Qual é a política de estacionamento do escritório?
+arquitetura: agente único (Aula 3)
+
+      [agente único] acessa: todos os espaços
+      [agente único] recebeu: Qual é a política de estacionamento do escritório?
+      [agente único] modelo pediu: buscar_politicas   (562 tokens de entrada, 20 de saída)
+      [agente único] buscar_politicas({"pergunta": "política de estacionamento"})  →  ['fin-viagens-e-reembolso', 'rh-ferias', 'rh-trabalho-remoto']
+      [agente único] modelo pediu: buscar_politicas   (904 tokens de entrada, 27 de saída)
+      [agente único] buscar_politicas({"pergunta": "estacionamento", "espaco": "wiki-financeiro"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [agente único] modelo pediu: buscar_politicas   (1284 tokens de entrada, 26 de saída)
+      [agente único] buscar_politicas({"pergunta": "estacionamento", "espaco": "wiki-rh"})  →  ['rh-codigo-de-conduta']
+      [agente único] modelo pediu: buscar_politicas   (1606 tokens de entrada, 25 de saída)
+      [agente único] buscar_politicas({"pergunta": "estacionamento", "espaco": "wiki-ti"})  →  ['ti-acesso-a-sistemas', 'ti-equipamentos', 'ti-instalacao-de-software']
+      [agente único] modelo pediu: buscar_politicas   (1868 tokens de entrada, 26 de saída)
+      [agente único] buscar_politicas({"pergunta": "uso do estacionamento", "espaco": "wiki-beneficios"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [agente único] modelo pediu: buscar_politicas   (2178 tokens de entrada, 28 de saída)
+      [agente único] buscar_politicas({"pergunta": "estacionamento do escritório", "espaco": "wiki-rh"})  →  ['rh-codigo-de-conduta', 'rh-desligamento']
+      [agente único] modelo pediu: buscar_politicas   (2504 tokens de entrada, 26 de saída)
+      [agente único] buscar_politicas({"pergunta": "uso de estacionamento", "espaco": "wiki-beneficios"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [agente único] modelo pediu: buscar_politicas   (2814 tokens de entrada, 26 de saída)
+      [agente único] buscar_politicas({"pergunta": "estacionamento", "espaco": "wiki-rh"})  →  ['rh-codigo-de-conduta']
+      [agente único] parou: passou de 8 passos
+
+resultado: ERROU (desfecho 'escalar', esperado 'nao_sei')
+custo por agente:
+  agente único              8 chamadas ·  13720 +  204 tokens · US$ 0.01474
+
+P1 · Bom dia! Você consegue me ajudar com dúvidas de RH e TI?
+arquitetura: agente único (Aula 3)
+
+      [agente único] acessa: todos os espaços
+      [agente único] recebeu: Bom dia! Você consegue me ajudar com dúvidas de RH e TI?
+      [agente único] modelo pediu: responder   (567 tokens de entrada, 53 de saída)
+      [agente único] encerrou: responder · fontes [] · “Bom dia! Sim, estou aqui para ajudar com suas dúvidas de RH e TI. Por favor, me diga qual é a sua pergunta.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  agente único              1 chamadas ·    567 +   53 tokens · US$ 0.00083
+
+X1 · Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?
+arquitetura: agente único (Aula 3)
+
+      [agente único] acessa: todos os espaços
+      [agente único] recebeu: Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?
+      [agente único] modelo pediu: escalar_para_rh   (568 tokens de entrada, 30 de saída)
+      [agente único] encerrou: escalar · “Colaborador pergunta sobre a elegibilidade para o auxílio-creche.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  agente único              1 chamadas ·    568 +   30 tokens · US$ 0.00072
+
+R1 · Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?
+arquitetura: roteador llm · 3 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (377 tokens de entrada, 45 de saída)
+  [roteador] → rh (confiança alta)  · Dúvida sobre limites de viagem a trabalho.
+  [roteador] passa adiante → especialista rh: “Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?”
+      [especialista rh] acessa: wiki-rh, confluence-rh, wiki-financeiro
+      [especialista rh] recebeu: Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?
+      [especialista rh] modelo pediu: buscar_politicas_rh, buscar_politicas_rh   (685 tokens de entrada, 69 de saída)
+      [especialista rh] buscar_politicas_rh({"pergunta": "limite diário de alimentação viagem a trabalho"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [especialista rh] buscar_politicas_rh({"pergunta": "VPN conectar Wi-Fi do hotel viagem a trabalho"})  →  ['fin-viagens-e-reembolso']
+      [especialista rh] modelo pediu: responder   (1676 tokens de entrada, 127 de saída)
+      [especialista rh] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “Seu limite diário de alimentação para a viagem a trabalho ao Rio de Janeiro, com pernoite, é de R$ 160,00, desde que a diária do hotel não inclua jantar. Cette-”
+
+resultado: ERROU (não citou ti-vpn-e-acesso-remoto)
+custo por agente:
+  roteador                  1 chamadas ·    377 +   45 tokens · US$ 0.00060
+  especialista rh           2 chamadas ·   2361 +  196 tokens · US$ 0.00334
+
+C2 · Qual o valor do auxílio home office?
+arquitetura: roteador llm · 3 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (347 tokens de entrada, 45 de saída)
+  [roteador] → beneficios (confiança alta)  · Dúvida específica sobre o valor do auxílio home office.
+  [roteador] passa adiante → especialista beneficios: “Qual o valor do auxílio home office?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: Qual o valor do auxílio home office?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (606 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "valor auxílio home office"})  →  ['beneficios-auxilio-creche', 'beneficios-vale-refeicao']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (969 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxílio home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (1312 tokens de entrada, 22 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "home office auxílio"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (1650 tokens de entrada, 21 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (1958 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "benefícios home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (2268 tokens de entrada, 24 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxilio home office valor"})  →  ['beneficios-auxilio-creche', 'beneficios-vale-refeicao']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (2637 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "benefício home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (2985 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "valor ajuda home office"})  →  ['beneficios-bem-estar', 'beneficios-vale-refeicao']
+      [especialista beneficios] parou: passou de 8 passos
+
+resultado: ERROU (desfecho 'escalar', esperado 'responder')
+custo por agente:
+  roteador                  1 chamadas ·    347 +   45 tokens · US$ 0.00057
+  especialista beneficios   8 chamadas ·  14385 +  182 tokens · US$ 0.01529
+
+R2 · Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?
+arquitetura: roteador llm · 3 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (357 tokens de entrada, 51 de saída)
+  [roteador] → beneficios (confiança alta)  · Dúvida sobre auxílio relacionado à internet para trabalho remoto.
+  [roteador] passa adiante → especialista beneficios: “Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (616 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "ajuda pagamento internet"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: responder   (955 tokens de entrada, 47 de saída)
+      [especialista beneficios] encerrou: nao_sei · fontes [] · “Não encontrei informações na minha área sobre ajuda para pagamento de internet para colaboradores que trabalham de casa.”
+
+resultado: ERROU (desfecho 'nao_sei', esperado 'responder')
+custo por agente:
+  roteador                  1 chamadas ·    357 +   51 tokens · US$ 0.00061
+  especialista beneficios   2 chamadas ·   1571 +   70 tokens · US$ 0.00192
+
+E1 · Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+arquitetura: roteador llm · 3 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (354 tokens de entrada, 46 de saída)
+  [roteador] → rh (confiança alta)  · Dúvida sobre despesas de viagem.
+  [roteador] passa adiante → especialista rh: “Qual o limite diário de alimentação numa viagem com pernoite em Brasília?”
+      [especialista rh] acessa: wiki-rh, confluence-rh, wiki-financeiro
+      [especialista rh] recebeu: Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+      [especialista rh] modelo pediu: buscar_politicas_rh   (662 tokens de entrada, 28 de saída)
+      [especialista rh] buscar_politicas_rh({"pergunta": "limite diário de alimentação viagem pernoite Brasília"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [especialista rh] modelo pediu: responder   (1117 tokens de entrada, 68 de saída)
+      [especialista rh] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “O limite diário de alimentação em viagens com pernoite em Brasília é de R$ 160,00 por pessoa, desde que a diária do hotel não inclua jantar.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    354 +   46 tokens · US$ 0.00058
+  especialista rh           2 chamadas ·   1779 +   96 tokens · US$ 0.00226
+
+S1 · A Aurora oferece previdência privada?
+arquitetura: roteador llm · 3 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (346 tokens de entrada, 40 de saída)
+  [roteador] → beneficios (confiança alta)  · Dúvida específica sobre benefícios da empresa.
+  [roteador] passa adiante → especialista beneficios: “A Aurora oferece previdência privada?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: A Aurora oferece previdência privada?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (605 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "previdência privada"})  →  ['beneficios-auxilio-creche', 'beneficios-plano-de-saude']
+      [especialista beneficios] modelo pediu: responder   (937 tokens de entrada, 42 de saída)
+      [especialista beneficios] encerrou: nao_sei · fontes [] · “Não encontrei informações sobre a oferta de previdência privada na Aurora Tecnologia.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    346 +   40 tokens · US$ 0.00055
+  especialista beneficios   2 chamadas ·   1542 +   65 tokens · US$ 0.00187
+
+S2 · Qual é a política de estacionamento do escritório?
+arquitetura: roteador llm · 3 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (348 tokens de entrada, 46 de saída)
+  [roteador] → geral (confiança baixa)  · A dúvida não se encaixa nas áreas específicas de atendimento.
+  [roteador] passa adiante → especialista geral: “Qual é a política de estacionamento do escritório?”
+      [especialista geral] acessa: nenhum espaço
+      [especialista geral] recebeu: Qual é a política de estacionamento do escritório?
+      [especialista geral] modelo pediu: responder   (390 tokens de entrada, 43 de saída)
+      [especialista geral] encerrou: nao_sei · fontes [] · “Desculpe, mas não tenho informações sobre a política de estacionamento do escritório.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    348 +   46 tokens · US$ 0.00058
+  especialista geral        1 chamadas ·    390 +   43 tokens · US$ 0.00060
+
+P1 · Bom dia! Você consegue me ajudar com dúvidas de RH e TI?
+arquitetura: roteador llm · 3 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (353 tokens de entrada, 43 de saída)
+  [roteador] → geral (confiança media)  · O colaborador está buscando informações de duas áreas diferentes.
+  [roteador] passa adiante → especialista geral: “Bom dia! Você consegue me ajudar com dúvidas de RH e TI?”
+      [especialista geral] acessa: nenhum espaço
+      [especialista geral] recebeu: Bom dia! Você consegue me ajudar com dúvidas de RH e TI?
+      [especialista geral] modelo pediu: responder   (395 tokens de entrada, 51 de saída)
+      [especialista geral] encerrou: responder · fontes [] · “Bom dia! Sim, posso ajudar com dúvidas de RH, TI, benefícios e financeiro. Sinta-se à vontade para perguntar!”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    353 +   43 tokens · US$ 0.00057
+  especialista geral        1 chamadas ·    395 +   51 tokens · US$ 0.00065
+
+X1 · Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?
+arquitetura: roteador llm · 3 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (354 tokens de entrada, 46 de saída)
+  [roteador] → beneficios (confiança alta)  · Pergunta clara sobre auxílio-creche.
+  [roteador] passa adiante → especialista beneficios: “Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?
+      [especialista beneficios] modelo pediu: escalar_para_rh   (613 tokens de entrada, 33 de saída)
+      [especialista beneficios] encerrou: escalar · “O colaborador está inquirindo sobre a elegibilidade ao auxílio-creche.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    354 +   46 tokens · US$ 0.00058
+  especialista beneficios   1 chamadas ·    613 +   33 tokens · US$ 0.00078
+
+R1 · Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?
+arquitetura: roteador regra · 3 esp · original · incerto→segue
+
+  [roteador] regra: palavras: vpn, wi-fi, viajar, hotel, alimentacao
+  [roteador] → rh (confiança alta)  · palavras: ['vpn', 'wi-fi', 'viajar', 'hotel', 'alimentacao']
+  [roteador] passa adiante → especialista rh: “Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?”
+      [especialista rh] acessa: wiki-rh, confluence-rh, wiki-financeiro
+      [especialista rh] recebeu: Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?
+      [especialista rh] modelo pediu: buscar_politicas_rh, buscar_politicas_rh   (685 tokens de entrada, 69 de saída)
+      [especialista rh] buscar_politicas_rh({"pergunta": "limite diário de alimentação viagem a trabalho"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [especialista rh] buscar_politicas_rh({"pergunta": "VPN conectar Wi-Fi do hotel viagem a trabalho"})  →  ['fin-viagens-e-reembolso']
+      [especialista rh] modelo pediu: responder   (1676 tokens de entrada, 127 de saída)
+      [especialista rh] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “Seu limite diário de alimentação para a viagem a trabalho ao Rio de Janeiro, com pernoite, é de R$ 160,00, desde que a diária do hotel não inclua jantar. Cette-”
+
+resultado: ERROU (não citou ti-vpn-e-acesso-remoto)
+custo por agente:
+  especialista rh           2 chamadas ·   2361 +  196 tokens · US$ 0.00334
+
+C2 · Qual o valor do auxílio home office?
+arquitetura: roteador regra · 3 esp · original · incerto→segue
+
+  [roteador] regra: palavras: home office, auxilio
+  [roteador] → rh (confiança baixa)  · palavras: ['home office', 'auxilio']
+  [roteador] passa adiante → especialista rh: “Qual o valor do auxílio home office?”
+      [especialista rh] acessa: wiki-rh, confluence-rh, wiki-financeiro
+      [especialista rh] recebeu: Qual o valor do auxílio home office?
+      [especialista rh] modelo pediu: buscar_politicas_rh   (655 tokens de entrada, 22 de saída)
+      [especialista rh] buscar_politicas_rh({"pergunta": "valor auxílio home office"})  →  ['fin-viagens-e-reembolso', 'rh-trabalho-remoto']
+      [especialista rh] modelo pediu: responder   (1090 tokens de entrada, 64 de saída)
+      [especialista rh] encerrou: responder · fontes ['rh-trabalho-remoto'] · “O valor do auxílio home office mensal é de R$ 120,00, que é creditado junto com o salário para ajudar com despesas de internet e energia.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  especialista rh           2 chamadas ·   1745 +   86 tokens · US$ 0.00217
+
+R2 · Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?
+arquitetura: roteador regra · 3 esp · original · incerto→segue
+
+  [roteador] regra: palavras: nenhuma
+  [roteador] → geral (confiança baixa)  · palavras: []
+  [roteador] passa adiante → especialista geral: “Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?”
+      [especialista geral] acessa: nenhum espaço
+      [especialista geral] recebeu: Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?
+      [especialista geral] modelo pediu: escalar_para_rh   (399 tokens de entrada, 29 de saída)
+      [especialista geral] encerrou: escalar · “Verificação de elegibilidade para ajuda no pagamento da internet.”
+
+resultado: ERROU (desfecho 'escalar', esperado 'responder')
+custo por agente:
+  especialista geral        1 chamadas ·    399 +   29 tokens · US$ 0.00054
+
+E1 · Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+arquitetura: roteador regra · 3 esp · original · incerto→segue
+
+  [roteador] regra: palavras: viagem, alimentacao
+  [roteador] → rh (confiança alta)  · palavras: ['viagem', 'alimentacao']
+  [roteador] passa adiante → especialista rh: “Qual o limite diário de alimentação numa viagem com pernoite em Brasília?”
+      [especialista rh] acessa: wiki-rh, confluence-rh, wiki-financeiro
+      [especialista rh] recebeu: Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+      [especialista rh] modelo pediu: buscar_politicas_rh   (662 tokens de entrada, 28 de saída)
+      [especialista rh] buscar_politicas_rh({"pergunta": "limite diário de alimentação viagem pernoite Brasília"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [especialista rh] modelo pediu: responder   (1117 tokens de entrada, 68 de saída)
+      [especialista rh] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “O limite diário de alimentação em viagens com pernoite em Brasília é de R$ 160,00 por pessoa, desde que a diária do hotel não inclua jantar.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  especialista rh           2 chamadas ·   1779 +   96 tokens · US$ 0.00226
+
+S1 · A Aurora oferece previdência privada?
+arquitetura: roteador regra · 3 esp · original · incerto→segue
+
+  [roteador] regra: palavras: nenhuma
+  [roteador] → geral (confiança baixa)  · palavras: []
+  [roteador] passa adiante → especialista geral: “A Aurora oferece previdência privada?”
+      [especialista geral] acessa: nenhum espaço
+      [especialista geral] recebeu: A Aurora oferece previdência privada?
+      [especialista geral] modelo pediu: responder   (388 tokens de entrada, 31 de saída)
+      [especialista geral] encerrou: nao_sei · fontes [] · “nao_sei”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  especialista geral        1 chamadas ·    388 +   31 tokens · US$ 0.00054
+
+S2 · Qual é a política de estacionamento do escritório?
+arquitetura: roteador regra · 3 esp · original · incerto→segue
+
+  [roteador] regra: palavras: nenhuma
+  [roteador] → geral (confiança baixa)  · palavras: []
+  [roteador] passa adiante → especialista geral: “Qual é a política de estacionamento do escritório?”
+      [especialista geral] acessa: nenhum espaço
+      [especialista geral] recebeu: Qual é a política de estacionamento do escritório?
+      [especialista geral] modelo pediu: responder   (390 tokens de entrada, 43 de saída)
+      [especialista geral] encerrou: nao_sei · fontes [] · “Desculpe, mas não tenho informações sobre a política de estacionamento do escritório.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  especialista geral        1 chamadas ·    390 +   43 tokens · US$ 0.00060
+
+P1 · Bom dia! Você consegue me ajudar com dúvidas de RH e TI?
+arquitetura: roteador regra · 3 esp · original · incerto→segue
+
+  [roteador] regra: palavras: bom dia, consegue me ajudar
+  [roteador] → geral (confiança alta)  · palavras: ['bom dia', 'consegue me ajudar']
+  [roteador] passa adiante → especialista geral: “Bom dia! Você consegue me ajudar com dúvidas de RH e TI?”
+      [especialista geral] acessa: nenhum espaço
+      [especialista geral] recebeu: Bom dia! Você consegue me ajudar com dúvidas de RH e TI?
+      [especialista geral] modelo pediu: responder   (395 tokens de entrada, 51 de saída)
+      [especialista geral] encerrou: responder · fontes [] · “Bom dia! Sim, posso ajudar com dúvidas de RH, TI, benefícios e financeiro. Sinta-se à vontade para perguntar!”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  especialista geral        1 chamadas ·    395 +   51 tokens · US$ 0.00065
+
+X1 · Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?
+arquitetura: roteador regra · 3 esp · original · incerto→segue
+
+  [roteador] regra: palavras: creche, auxilio
+  [roteador] → beneficios (confiança alta)  · palavras: ['creche', 'auxilio']
+  [roteador] passa adiante → especialista beneficios: “Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?
+      [especialista beneficios] modelo pediu: escalar_para_rh   (613 tokens de entrada, 33 de saída)
+      [especialista beneficios] encerrou: escalar · “O colaborador está inquirindo sobre a elegibilidade ao auxílio-creche.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  especialista beneficios   1 chamadas ·    613 +   33 tokens · US$ 0.00078
+
+R1 · Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?
+arquitetura: roteador llm · 4 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (386 tokens de entrada, 47 de saída)
+  [roteador] → financeiro (confiança alta)  · A dúvida é específica sobre despesas de viagem a trabalho.
+  [roteador] passa adiante → especialista financeiro: “Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?”
+      [especialista financeiro] acessa: wiki-financeiro
+      [especialista financeiro] recebeu: Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?
+      [especialista financeiro] modelo pediu: buscar_politicas_financeiro, buscar_politicas_financeiro, buscar_politicas_financeiro   (603 tokens de entrada, 98 de saída)
+      [especialista financeiro] buscar_politicas_financeiro({"pergunta": "limite diário de alimentação viagem a trabalho"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [especialista financeiro] buscar_politicas_financeiro({"pergunta": "VPN não conectar no Wi-Fi do hotel"})  →  ['fin-viagens-e-reembolso']
+      [especialista financeiro] buscar_politicas_financeiro({"pergunta": "alimentação e pernoite viagens a trabalho"})  →  ['fin-viagens-e-reembolso']
+      [especialista financeiro] modelo pediu: responder   (2072 tokens de entrada, 128 de saída)
+      [especialista financeiro] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “O limite diário de alimentação para viagens a trabalho no Rio de Janeiro é de R$ 160,00, desde que a diária de hotel não inclua jantar. Esse valor é válido para”
+
+resultado: ERROU (não citou ti-vpn-e-acesso-remoto)
+custo por agente:
+  roteador                  1 chamadas ·    386 +   47 tokens · US$ 0.00062
+  especialista financeiro   2 chamadas ·   2675 +  226 tokens · US$ 0.00380
+
+C2 · Qual o valor do auxílio home office?
+arquitetura: roteador llm · 4 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (356 tokens de entrada, 41 de saída)
+  [roteador] → beneficios (confiança alta)  · Dúvida específica sobre auxílio home office.
+  [roteador] passa adiante → especialista beneficios: “Qual o valor do auxílio home office?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: Qual o valor do auxílio home office?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (606 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "valor auxílio home office"})  →  ['beneficios-auxilio-creche', 'beneficios-vale-refeicao']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (969 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxílio home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (1312 tokens de entrada, 22 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "home office auxílio"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (1650 tokens de entrada, 21 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (1958 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "benefícios home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (2268 tokens de entrada, 24 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxilio home office valor"})  →  ['beneficios-auxilio-creche', 'beneficios-vale-refeicao']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (2637 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "benefício home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (2985 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "valor ajuda home office"})  →  ['beneficios-bem-estar', 'beneficios-vale-refeicao']
+      [especialista beneficios] parou: passou de 8 passos
+
+resultado: ERROU (desfecho 'escalar', esperado 'responder')
+custo por agente:
+  roteador                  1 chamadas ·    356 +   41 tokens · US$ 0.00056
+  especialista beneficios   8 chamadas ·  14385 +  182 tokens · US$ 0.01529
+
+R2 · Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?
+arquitetura: roteador llm · 4 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (366 tokens de entrada, 48 de saída)
+  [roteador] → beneficios (confiança alta)  · Pergunta sobre auxílio relacionado a benefícios da empresa.
+  [roteador] passa adiante → especialista beneficios: “Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (616 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "ajuda pagamento internet"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: responder   (955 tokens de entrada, 47 de saída)
+      [especialista beneficios] encerrou: nao_sei · fontes [] · “Não encontrei informações na minha área sobre ajuda para pagamento de internet para colaboradores que trabalham de casa.”
+
+resultado: ERROU (desfecho 'nao_sei', esperado 'responder')
+custo por agente:
+  roteador                  1 chamadas ·    366 +   48 tokens · US$ 0.00061
+  especialista beneficios   2 chamadas ·   1571 +   70 tokens · US$ 0.00192
+
+E1 · Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+arquitetura: roteador llm · 4 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (363 tokens de entrada, 49 de saída)
+  [roteador] → financeiro (confiança alta)  · Dúvida específica sobre reembolso em viagens.
+  [roteador] passa adiante → especialista financeiro: “Qual o limite diário de alimentação numa viagem com pernoite em Brasília?”
+      [especialista financeiro] acessa: wiki-financeiro
+      [especialista financeiro] recebeu: Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+      [especialista financeiro] modelo pediu: buscar_politicas_financeiro   (580 tokens de entrada, 29 de saída)
+      [especialista financeiro] buscar_politicas_financeiro({"pergunta": "limite diário de alimentação viagem pernoite Brasília"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [especialista financeiro] modelo pediu: responder   (1037 tokens de entrada, 82 de saída)
+      [especialista financeiro] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “O limite diário de alimentação em viagens com pernoite em Brasília é de R$ 160,00 por pessoa, considerando que a diária de hotel não inclua jantar. Esse valor s”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    363 +   49 tokens · US$ 0.00061
+  especialista financeiro   2 chamadas ·   1617 +  111 tokens · US$ 0.00217
+
+S1 · A Aurora oferece previdência privada?
+arquitetura: roteador llm · 4 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (355 tokens de entrada, 42 de saída)
+  [roteador] → beneficios (confiança alta)  · Pergunta específica sobre os benefícios oferecidos pela Aurora.
+  [roteador] passa adiante → especialista beneficios: “A Aurora oferece previdência privada?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: A Aurora oferece previdência privada?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (605 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "previdência privada"})  →  ['beneficios-auxilio-creche', 'beneficios-plano-de-saude']
+      [especialista beneficios] modelo pediu: responder   (937 tokens de entrada, 42 de saída)
+      [especialista beneficios] encerrou: nao_sei · fontes [] · “Não encontrei informações sobre a oferta de previdência privada na Aurora Tecnologia.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    355 +   42 tokens · US$ 0.00056
+  especialista beneficios   2 chamadas ·   1542 +   65 tokens · US$ 0.00187
+
+S2 · Qual é a política de estacionamento do escritório?
+arquitetura: roteador llm · 4 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (357 tokens de entrada, 48 de saída)
+  [roteador] → geral (confiança baixa)  · A dúvida não se encaixa em uma das áreas de especialistas disponíveis.
+  [roteador] passa adiante → especialista geral: “Qual é a política de estacionamento do escritório?”
+      [especialista geral] acessa: nenhum espaço
+      [especialista geral] recebeu: Qual é a política de estacionamento do escritório?
+      [especialista geral] modelo pediu: responder   (390 tokens de entrada, 43 de saída)
+      [especialista geral] encerrou: nao_sei · fontes [] · “Desculpe, mas não tenho informações sobre a política de estacionamento do escritório.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    357 +   48 tokens · US$ 0.00060
+  especialista geral        1 chamadas ·    390 +   43 tokens · US$ 0.00060
+
+P1 · Bom dia! Você consegue me ajudar com dúvidas de RH e TI?
+arquitetura: roteador llm · 4 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (362 tokens de entrada, 42 de saída)
+  [roteador] → geral (confiança baixa)  · A dúvida abrange mais de uma área.
+  [roteador] passa adiante → especialista geral: “Bom dia! Você consegue me ajudar com dúvidas de RH e TI?”
+      [especialista geral] acessa: nenhum espaço
+      [especialista geral] recebeu: Bom dia! Você consegue me ajudar com dúvidas de RH e TI?
+      [especialista geral] modelo pediu: responder   (395 tokens de entrada, 51 de saída)
+      [especialista geral] encerrou: responder · fontes [] · “Bom dia! Sim, posso ajudar com dúvidas de RH, TI, benefícios e financeiro. Sinta-se à vontade para perguntar!”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    362 +   42 tokens · US$ 0.00057
+  especialista geral        1 chamadas ·    395 +   51 tokens · US$ 0.00065
+
+X1 · Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?
+arquitetura: roteador llm · 4 esp · original · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (363 tokens de entrada, 45 de saída)
+  [roteador] → beneficios (confiança alta)  · Pergunta direta sobre auxílio-creche.
+  [roteador] passa adiante → especialista beneficios: “Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?
+      [especialista beneficios] modelo pediu: escalar_para_rh   (613 tokens de entrada, 33 de saída)
+      [especialista beneficios] encerrou: escalar · “O colaborador está inquirindo sobre a elegibilidade ao auxílio-creche.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    363 +   45 tokens · US$ 0.00059
+  especialista beneficios   1 chamadas ·    613 +   33 tokens · US$ 0.00078
+
+R1 · Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?
+arquitetura: roteador llm · 3 esp · resumo · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (377 tokens de entrada, 45 de saída)
+  [roteador] → rh (confiança alta)  · Dúvida sobre limites de viagem a trabalho.
+  [roteador] passa adiante → especialista rh: “Qual é o limite diário de alimentação para viagens a trabalho?”
+      [especialista rh] acessa: wiki-rh, confluence-rh, wiki-financeiro
+      [especialista rh] recebeu: Qual é o limite diário de alimentação para viagens a trabalho?
+      [especialista rh] modelo pediu: buscar_politicas_rh   (659 tokens de entrada, 27 de saída)
+      [especialista rh] buscar_politicas_rh({"pergunta": "limite diário de alimentação para viagens a trabalho"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [especialista rh] modelo pediu: responder   (1133 tokens de entrada, 105 de saída)
+      [especialista rh] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “O limite diário de alimentação em viagens nacionais é de R$ 110,00 por pessoa, somando todas as refeições do dia. Esse teto não se aplica quando o pernoite é em”
+
+resultado: ERROU (não citou ti-vpn-e-acesso-remoto)
+custo por agente:
+  roteador                  1 chamadas ·    377 +   45 tokens · US$ 0.00060
+  especialista rh           2 chamadas ·   1792 +  132 tokens · US$ 0.00245
+
+C2 · Qual o valor do auxílio home office?
+arquitetura: roteador llm · 3 esp · resumo · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (347 tokens de entrada, 45 de saída)
+  [roteador] → beneficios (confiança alta)  · Dúvida específica sobre o valor do auxílio home office.
+  [roteador] passa adiante → especialista beneficios: “Qual é o valor do auxílio home office?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: Qual é o valor do auxílio home office?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (607 tokens de entrada, 24 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "valor do auxílio home office"})  →  ['beneficios-auxilio-creche', 'beneficios-vale-refeicao']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (971 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxílio home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (1314 tokens de entrada, 24 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxílio home office valor"})  →  ['beneficios-auxilio-creche', 'beneficios-vale-refeicao']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (1678 tokens de entrada, 26 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "valor do auxílio home office na Aurora"})  →  ['beneficios-auxilio-creche', 'beneficios-plano-odontologico', 'beneficios-seguro-de-vida']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (2030 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxílio home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (2373 tokens de entrada, 24 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxílio home office empresa"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (2717 tokens de entrada, 24 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxílio home office valor"})  →  ['beneficios-auxilio-creche', 'beneficios-vale-refeicao']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (3081 tokens de entrada, 25 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxílio home office na Aurora"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar', 'beneficios-seguro-de-vida']
+      [especialista beneficios] parou: passou de 8 passos
+
+resultado: ERROU (desfecho 'escalar', esperado 'responder')
+custo por agente:
+  roteador                  1 chamadas ·    347 +   45 tokens · US$ 0.00057
+  especialista beneficios   8 chamadas ·  14771 +  193 tokens · US$ 0.01574
+
+R2 · Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?
+arquitetura: roteador llm · 3 esp · resumo · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (357 tokens de entrada, 51 de saída)
+  [roteador] → beneficios (confiança alta)  · Dúvida sobre auxílio relacionado à internet para trabalho remoto.
+  [roteador] passa adiante → especialista beneficios: “A empresa oferece auxílio para pagamento da internet para colaboradores que trabalham de casa?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: A empresa oferece auxílio para pagamento da internet para colaboradores que trabalham de casa?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (613 tokens de entrada, 24 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxílio internet home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: responder   (953 tokens de entrada, 45 de saída)
+      [especialista beneficios] encerrou: nao_sei · fontes [] · “Não encontrei informações sobre um auxílio para pagamento da internet para colaboradores que trabalham de casa.”
+
+resultado: ERROU (desfecho 'nao_sei', esperado 'responder')
+custo por agente:
+  roteador                  1 chamadas ·    357 +   51 tokens · US$ 0.00061
+  especialista beneficios   2 chamadas ·   1566 +   69 tokens · US$ 0.00191
+
+E1 · Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+arquitetura: roteador llm · 3 esp · resumo · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (354 tokens de entrada, 46 de saída)
+  [roteador] → rh (confiança alta)  · Dúvida sobre despesas de viagem.
+  [roteador] passa adiante → especialista rh: “Qual o limite diário de alimentação numa viagem com pernoite em Brasília?”
+      [especialista rh] acessa: wiki-rh, confluence-rh, wiki-financeiro
+      [especialista rh] recebeu: Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+      [especialista rh] modelo pediu: buscar_politicas_rh   (662 tokens de entrada, 28 de saída)
+      [especialista rh] buscar_politicas_rh({"pergunta": "limite diário de alimentação viagem pernoite Brasília"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [especialista rh] modelo pediu: responder   (1117 tokens de entrada, 68 de saída)
+      [especialista rh] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “O limite diário de alimentação em viagens com pernoite em Brasília é de R$ 160,00 por pessoa, desde que a diária do hotel não inclua jantar.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    354 +   46 tokens · US$ 0.00058
+  especialista rh           2 chamadas ·   1779 +   96 tokens · US$ 0.00226
+
+S1 · A Aurora oferece previdência privada?
+arquitetura: roteador llm · 3 esp · resumo · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (346 tokens de entrada, 40 de saída)
+  [roteador] → beneficios (confiança alta)  · Dúvida específica sobre benefícios da empresa.
+  [roteador] passa adiante → especialista beneficios: “A empresa oferece previdência privada?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: A empresa oferece previdência privada?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (605 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "previdência privada"})  →  ['beneficios-auxilio-creche', 'beneficios-plano-de-saude']
+      [especialista beneficios] modelo pediu: responder   (937 tokens de entrada, 42 de saída)
+      [especialista beneficios] encerrou: nao_sei · fontes [] · “Não encontrei informação sobre a oferta de previdência privada na Aurora Tecnologia.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    346 +   40 tokens · US$ 0.00055
+  especialista beneficios   2 chamadas ·   1542 +   65 tokens · US$ 0.00187
+
+S2 · Qual é a política de estacionamento do escritório?
+arquitetura: roteador llm · 3 esp · resumo · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (348 tokens de entrada, 46 de saída)
+  [roteador] → geral (confiança baixa)  · A dúvida não se encaixa nas áreas específicas de atendimento.
+  [roteador] passa adiante → especialista geral: “Qual é a política de estacionamento do escritório?”
+      [especialista geral] acessa: nenhum espaço
+      [especialista geral] recebeu: Qual é a política de estacionamento do escritório?
+      [especialista geral] modelo pediu: responder   (390 tokens de entrada, 43 de saída)
+      [especialista geral] encerrou: nao_sei · fontes [] · “Desculpe, mas não tenho informações sobre a política de estacionamento do escritório.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    348 +   46 tokens · US$ 0.00058
+  especialista geral        1 chamadas ·    390 +   43 tokens · US$ 0.00060
+
+P1 · Bom dia! Você consegue me ajudar com dúvidas de RH e TI?
+arquitetura: roteador llm · 3 esp · resumo · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (353 tokens de entrada, 43 de saída)
+  [roteador] → geral (confiança media)  · O colaborador está buscando informações de duas áreas diferentes.
+  [roteador] passa adiante → especialista geral: “Dúvidas sobre RH e TI.”
+      [especialista geral] acessa: nenhum espaço
+      [especialista geral] recebeu: Dúvidas sobre RH e TI.
+      [especialista geral] modelo pediu: responder, responder   (389 tokens de entrada, 112 de saída)
+      [especialista geral] encerrou: responder · fontes [] · “Olá! Estou aqui para ajudar com dúvidas sobre RH, TI, benefícios e financeiro. Como posso ajudá-lo hoje?”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    353 +   43 tokens · US$ 0.00057
+  especialista geral        1 chamadas ·    389 +  112 tokens · US$ 0.00095
+
+X1 · Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?
+arquitetura: roteador llm · 3 esp · resumo · incerto→segue
+
+  [roteador] modelo pediu: encaminhar   (354 tokens de entrada, 46 de saída)
+  [roteador] → beneficios (confiança alta)  · Pergunta clara sobre auxílio-creche.
+  [roteador] passa adiante → especialista beneficios: “Tenho direito ao auxílio-creche para meu filho de 4 anos?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: Tenho direito ao auxílio-creche para meu filho de 4 anos?
+      [especialista beneficios] modelo pediu: escalar_para_rh   (612 tokens de entrada, 28 de saída)
+      [especialista beneficios] encerrou: escalar · “Dúvida sobre elegibilidade ao auxílio-creche.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    354 +   46 tokens · US$ 0.00058
+  especialista beneficios   1 chamadas ·    612 +   28 tokens · US$ 0.00075
+
+R1 · Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?
+arquitetura: roteador llm · 3 esp · original · incerto→único
+
+  [roteador] modelo pediu: encaminhar   (377 tokens de entrada, 45 de saída)
+  [roteador] → rh (confiança alta)  · Dúvida sobre limites de viagem a trabalho.
+  [roteador] passa adiante → especialista rh: “Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?”
+      [especialista rh] acessa: wiki-rh, confluence-rh, wiki-financeiro
+      [especialista rh] recebeu: Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?
+      [especialista rh] modelo pediu: buscar_politicas_rh, buscar_politicas_rh   (685 tokens de entrada, 69 de saída)
+      [especialista rh] buscar_politicas_rh({"pergunta": "limite diário de alimentação viagem a trabalho"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [especialista rh] buscar_politicas_rh({"pergunta": "VPN conectar Wi-Fi do hotel viagem a trabalho"})  →  ['fin-viagens-e-reembolso']
+      [especialista rh] modelo pediu: responder   (1676 tokens de entrada, 127 de saída)
+      [especialista rh] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “Seu limite diário de alimentação para a viagem a trabalho ao Rio de Janeiro, com pernoite, é de R$ 160,00, desde que a diária do hotel não inclua jantar. Cette-”
+
+resultado: ERROU (não citou ti-vpn-e-acesso-remoto)
+custo por agente:
+  roteador                  1 chamadas ·    377 +   45 tokens · US$ 0.00060
+  especialista rh           2 chamadas ·   2361 +  196 tokens · US$ 0.00334
+
+C2 · Qual o valor do auxílio home office?
+arquitetura: roteador llm · 3 esp · original · incerto→único
+
+  [roteador] modelo pediu: encaminhar   (347 tokens de entrada, 45 de saída)
+  [roteador] → beneficios (confiança alta)  · Dúvida específica sobre o valor do auxílio home office.
+  [roteador] passa adiante → especialista beneficios: “Qual o valor do auxílio home office?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: Qual o valor do auxílio home office?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (606 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "valor auxílio home office"})  →  ['beneficios-auxilio-creche', 'beneficios-vale-refeicao']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (969 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxílio home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (1312 tokens de entrada, 22 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "home office auxílio"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (1650 tokens de entrada, 21 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (1958 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "benefícios home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (2268 tokens de entrada, 24 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxilio home office valor"})  →  ['beneficios-auxilio-creche', 'beneficios-vale-refeicao']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (2637 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "benefício home office"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (2985 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "valor ajuda home office"})  →  ['beneficios-bem-estar', 'beneficios-vale-refeicao']
+      [especialista beneficios] parou: passou de 8 passos
+
+resultado: ERROU (desfecho 'escalar', esperado 'responder')
+custo por agente:
+  roteador                  1 chamadas ·    347 +   45 tokens · US$ 0.00057
+  especialista beneficios   8 chamadas ·  14385 +  182 tokens · US$ 0.01529
+
+R2 · Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?
+arquitetura: roteador llm · 3 esp · original · incerto→único
+
+  [roteador] modelo pediu: encaminhar   (357 tokens de entrada, 51 de saída)
+  [roteador] → beneficios (confiança alta)  · Dúvida sobre auxílio relacionado à internet para trabalho remoto.
+  [roteador] passa adiante → especialista beneficios: “Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (616 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "ajuda pagamento internet"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [especialista beneficios] modelo pediu: responder   (955 tokens de entrada, 47 de saída)
+      [especialista beneficios] encerrou: nao_sei · fontes [] · “Não encontrei informações na minha área sobre ajuda para pagamento de internet para colaboradores que trabalham de casa.”
+
+resultado: ERROU (desfecho 'nao_sei', esperado 'responder')
+custo por agente:
+  roteador                  1 chamadas ·    357 +   51 tokens · US$ 0.00061
+  especialista beneficios   2 chamadas ·   1571 +   70 tokens · US$ 0.00192
+
+E1 · Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+arquitetura: roteador llm · 3 esp · original · incerto→único
+
+  [roteador] modelo pediu: encaminhar   (354 tokens de entrada, 46 de saída)
+  [roteador] → rh (confiança alta)  · Dúvida sobre despesas de viagem.
+  [roteador] passa adiante → especialista rh: “Qual o limite diário de alimentação numa viagem com pernoite em Brasília?”
+      [especialista rh] acessa: wiki-rh, confluence-rh, wiki-financeiro
+      [especialista rh] recebeu: Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+      [especialista rh] modelo pediu: buscar_politicas_rh   (662 tokens de entrada, 28 de saída)
+      [especialista rh] buscar_politicas_rh({"pergunta": "limite diário de alimentação viagem pernoite Brasília"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [especialista rh] modelo pediu: responder   (1117 tokens de entrada, 68 de saída)
+      [especialista rh] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “O limite diário de alimentação em viagens com pernoite em Brasília é de R$ 160,00 por pessoa, desde que a diária do hotel não inclua jantar.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    354 +   46 tokens · US$ 0.00058
+  especialista rh           2 chamadas ·   1779 +   96 tokens · US$ 0.00226
+
+S1 · A Aurora oferece previdência privada?
+arquitetura: roteador llm · 3 esp · original · incerto→único
+
+  [roteador] modelo pediu: encaminhar   (346 tokens de entrada, 40 de saída)
+  [roteador] → beneficios (confiança alta)  · Dúvida específica sobre benefícios da empresa.
+  [roteador] passa adiante → especialista beneficios: “A Aurora oferece previdência privada?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: A Aurora oferece previdência privada?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (605 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "previdência privada"})  →  ['beneficios-auxilio-creche', 'beneficios-plano-de-saude']
+      [especialista beneficios] modelo pediu: responder   (937 tokens de entrada, 42 de saída)
+      [especialista beneficios] encerrou: nao_sei · fontes [] · “Não encontrei informações sobre a oferta de previdência privada na Aurora Tecnologia.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    346 +   40 tokens · US$ 0.00055
+  especialista beneficios   2 chamadas ·   1542 +   65 tokens · US$ 0.00187
+
+S2 · Qual é a política de estacionamento do escritório?
+arquitetura: roteador llm · 3 esp · original · incerto→único
+
+  [roteador] modelo pediu: encaminhar   (348 tokens de entrada, 46 de saída)
+  [roteador] → geral (confiança baixa)  · A dúvida não se encaixa nas áreas específicas de atendimento.
+  [roteador] passa adiante incerto: devolve ao agente único: “Qual é a política de estacionamento do escritório?”
+      [agente único] acessa: todos os espaços
+      [agente único] recebeu: Qual é a política de estacionamento do escritório?
+      [agente único] modelo pediu: buscar_politicas   (562 tokens de entrada, 20 de saída)
+      [agente único] buscar_politicas({"pergunta": "política de estacionamento"})  →  ['fin-viagens-e-reembolso', 'rh-ferias', 'rh-trabalho-remoto']
+      [agente único] modelo pediu: buscar_politicas   (904 tokens de entrada, 27 de saída)
+      [agente único] buscar_politicas({"pergunta": "estacionamento", "espaco": "wiki-financeiro"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [agente único] modelo pediu: buscar_politicas   (1284 tokens de entrada, 26 de saída)
+      [agente único] buscar_politicas({"pergunta": "estacionamento", "espaco": "wiki-rh"})  →  ['rh-codigo-de-conduta']
+      [agente único] modelo pediu: buscar_politicas   (1606 tokens de entrada, 25 de saída)
+      [agente único] buscar_politicas({"pergunta": "estacionamento", "espaco": "wiki-ti"})  →  ['ti-acesso-a-sistemas', 'ti-equipamentos', 'ti-instalacao-de-software']
+      [agente único] modelo pediu: buscar_politicas   (1868 tokens de entrada, 26 de saída)
+      [agente único] buscar_politicas({"pergunta": "uso do estacionamento", "espaco": "wiki-beneficios"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [agente único] modelo pediu: buscar_politicas   (2178 tokens de entrada, 28 de saída)
+      [agente único] buscar_politicas({"pergunta": "estacionamento do escritório", "espaco": "wiki-rh"})  →  ['rh-codigo-de-conduta', 'rh-desligamento']
+      [agente único] modelo pediu: buscar_politicas   (2504 tokens de entrada, 26 de saída)
+      [agente único] buscar_politicas({"pergunta": "uso de estacionamento", "espaco": "wiki-beneficios"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar']
+      [agente único] modelo pediu: buscar_politicas   (2814 tokens de entrada, 26 de saída)
+      [agente único] buscar_politicas({"pergunta": "estacionamento", "espaco": "wiki-rh"})  →  ['rh-codigo-de-conduta']
+      [agente único] parou: passou de 8 passos
+
+resultado: ERROU (desfecho 'escalar', esperado 'nao_sei')
+custo por agente:
+  roteador                  1 chamadas ·    348 +   46 tokens · US$ 0.00058
+  agente único              8 chamadas ·  13720 +  204 tokens · US$ 0.01474
+
+P1 · Bom dia! Você consegue me ajudar com dúvidas de RH e TI?
+arquitetura: roteador llm · 3 esp · original · incerto→único
+
+  [roteador] modelo pediu: encaminhar   (353 tokens de entrada, 43 de saída)
+  [roteador] → geral (confiança media)  · O colaborador está buscando informações de duas áreas diferentes.
+  [roteador] passa adiante → especialista geral: “Bom dia! Você consegue me ajudar com dúvidas de RH e TI?”
+      [especialista geral] acessa: nenhum espaço
+      [especialista geral] recebeu: Bom dia! Você consegue me ajudar com dúvidas de RH e TI?
+      [especialista geral] modelo pediu: responder   (395 tokens de entrada, 51 de saída)
+      [especialista geral] encerrou: responder · fontes [] · “Bom dia! Sim, posso ajudar com dúvidas de RH, TI, benefícios e financeiro. Sinta-se à vontade para perguntar!”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    353 +   43 tokens · US$ 0.00057
+  especialista geral        1 chamadas ·    395 +   51 tokens · US$ 0.00065
+
+X1 · Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?
+arquitetura: roteador llm · 3 esp · original · incerto→único
+
+  [roteador] modelo pediu: encaminhar   (354 tokens de entrada, 46 de saída)
+  [roteador] → beneficios (confiança alta)  · Pergunta clara sobre auxílio-creche.
+  [roteador] passa adiante → especialista beneficios: “Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?
+      [especialista beneficios] modelo pediu: escalar_para_rh   (613 tokens de entrada, 33 de saída)
+      [especialista beneficios] encerrou: escalar · “O colaborador está inquirindo sobre a elegibilidade ao auxílio-creche.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  roteador                  1 chamadas ·    354 +   46 tokens · US$ 0.00058
+  especialista beneficios   1 chamadas ·    613 +   33 tokens · US$ 0.00078
+
+R1 · Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?
+arquitetura: supervisor · 3 esp
+
+  [supervisor] recebeu: Vou viajar a trabalho para o Rio, com pernoite. Qual o meu limite diário de alimentação? E se a VPN não conectar no Wi-Fi do hotel, o que eu faço?
+  [supervisor] modelo pediu: consultar_rh, consultar_ti   (754 tokens de entrada, 78 de saída)
+  [supervisor] passa adiante → especialista rh: “Qual é o limite diário de alimentação para viagens a trabalho com pernoite?”
+      [especialista rh] acessa: wiki-rh, confluence-rh, wiki-financeiro
+      [especialista rh] recebeu: Qual é o limite diário de alimentação para viagens a trabalho com pernoite?
+      [especialista rh] modelo pediu: buscar_politicas_rh   (663 tokens de entrada, 29 de saída)
+      [especialista rh] buscar_politicas_rh({"pergunta": "limite diário alimentação viagens a trabalho com pernoite"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [especialista rh] modelo pediu: responder   (1139 tokens de entrada, 104 de saída)
+      [especialista rh] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “O limite diário de alimentação em viagens nacionais com pernoite é de R$ 110,00 por pessoa, somando todas as refeições do dia. No entanto, esse teto aumenta par”
+  [supervisor] passa adiante → especialista ti: “O que fazer se a VPN não conectar no Wi-Fi do hotel?”
+      [especialista ti] acessa: wiki-ti
+      [especialista ti] recebeu: O que fazer se a VPN não conectar no Wi-Fi do hotel?
+      [especialista ti] modelo pediu: buscar_politicas_ti   (585 tokens de entrada, 25 de saída)
+      [especialista ti] buscar_politicas_ti({"pergunta": "VPN não conectar Wi-Fi do hotel"})  →  ['ti-vpn-codigos-de-erro', 'ti-vpn-e-acesso-remoto']
+      [especialista ti] modelo pediu: responder   (1041 tokens de entrada, 156 de saída)
+      [especialista ti] encerrou: responder · fontes ['ti-vpn-codigos-de-erro', 'ti-vpn-e-acesso-remoto'] · “Se a VPN não conectar no Wi-Fi do hotel, siga estes passos:
+1. Ative a opção "Modo TCP 443" no cliente de VPN e tente reconectar. Isso é necessário porque redes”
+  [supervisor] modelo pediu: responder   (1094 tokens de entrada, 237 de saída)
+  [supervisor] encerrou: responder · fontes ['fin-viagens-e-reembolso', 'ti-vpn-codigos-de-erro', 'ti-vpn-e-acesso-remoto'] · “O limite diário de alimentação em viagens nacionais com pernoite é de R$ 110,00 por pessoa, somando todas as refeições do dia. No entanto, esse teto aumenta par”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  supervisor                2 chamadas ·   1848 +  315 tokens · US$ 0.00342
+  especialista rh           2 chamadas ·   1802 +  133 tokens · US$ 0.00247
+  especialista ti           2 chamadas ·   1626 +  181 tokens · US$ 0.00253
+
+C2 · Qual o valor do auxílio home office?
+arquitetura: supervisor · 3 esp
+
+  [supervisor] recebeu: Qual o valor do auxílio home office?
+  [supervisor] modelo pediu: consultar_rh   (724 tokens de entrada, 24 de saída)
+  [supervisor] passa adiante → especialista rh: “Qual o valor do auxílio home office?”
+      [especialista rh] acessa: wiki-rh, confluence-rh, wiki-financeiro
+      [especialista rh] recebeu: Qual o valor do auxílio home office?
+      [especialista rh] modelo pediu: buscar_politicas_rh   (655 tokens de entrada, 22 de saída)
+      [especialista rh] buscar_politicas_rh({"pergunta": "valor auxílio home office"})  →  ['fin-viagens-e-reembolso', 'rh-trabalho-remoto']
+      [especialista rh] modelo pediu: responder   (1090 tokens de entrada, 64 de saída)
+      [especialista rh] encerrou: responder · fontes ['rh-trabalho-remoto'] · “O valor do auxílio home office mensal é de R$ 120,00, que é creditado junto com o salário para ajudar com despesas de internet e energia.”
+  [supervisor] modelo pediu: responder   (817 tokens de entrada, 64 de saída)
+  [supervisor] encerrou: responder · fontes ['rh-trabalho-remoto'] · “O valor do auxílio home office mensal é de R$ 120,00, que é creditado junto com o salário para ajudar com despesas de internet e energia.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  supervisor                2 chamadas ·   1541 +   88 tokens · US$ 0.00198
+  especialista rh           2 chamadas ·   1745 +   86 tokens · US$ 0.00217
+
+R2 · Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?
+arquitetura: supervisor · 3 esp
+
+  [supervisor] recebeu: Trabalho de casa três dias por semana. A empresa me ajuda a pagar a internet?
+  [supervisor] modelo pediu: consultar_beneficios   (734 tokens de entrada, 33 de saída)
+  [supervisor] passa adiante → especialista beneficios: “A empresa oferece auxílio para o pagamento de internet para colaboradores que trabalham remotamente?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: A empresa oferece auxílio para o pagamento de internet para colaboradores que trabalham remotamente?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (614 tokens de entrada, 25 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "auxílio internet colaboradores remotos"})  →  ['beneficios-auxilio-creche', 'beneficios-plano-de-saude']
+      [especialista beneficios] modelo pediu: responder   (948 tokens de entrada, 45 de saída)
+      [especialista beneficios] encerrou: nao_sei · fontes [] · “Não encontrei informações sobre auxílio para o pagamento de internet para colaboradores que trabalham remotamente.”
+  [supervisor] modelo pediu: escalar_para_rh   (818 tokens de entrada, 33 de saída)
+  [supervisor] encerrou: escalar · “Pergunta sobre auxílio para o pagamento de internet para colaboradores que trabalham remotamente.”
+
+resultado: ERROU (desfecho 'escalar', esperado 'responder')
+custo por agente:
+  supervisor                2 chamadas ·   1552 +   66 tokens · US$ 0.00188
+  especialista beneficios   2 chamadas ·   1562 +   70 tokens · US$ 0.00191
+
+E1 · Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+arquitetura: supervisor · 3 esp
+
+  [supervisor] recebeu: Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+  [supervisor] modelo pediu: consultar_rh   (731 tokens de entrada, 31 de saída)
+  [supervisor] passa adiante → especialista rh: “Qual o limite diário de alimentação numa viagem com pernoite em Brasília?”
+      [especialista rh] acessa: wiki-rh, confluence-rh, wiki-financeiro
+      [especialista rh] recebeu: Qual o limite diário de alimentação numa viagem com pernoite em Brasília?
+      [especialista rh] modelo pediu: buscar_politicas_rh   (662 tokens de entrada, 28 de saída)
+      [especialista rh] buscar_politicas_rh({"pergunta": "limite diário de alimentação viagem pernoite Brasília"})  →  ['fin-adiantamento-de-viagem', 'fin-viagens-e-reembolso']
+      [especialista rh] modelo pediu: responder   (1117 tokens de entrada, 68 de saída)
+      [especialista rh] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “O limite diário de alimentação em viagens com pernoite em Brasília é de R$ 160,00 por pessoa, desde que a diária do hotel não inclua jantar.”
+  [supervisor] modelo pediu: responder   (835 tokens de entrada, 68 de saída)
+  [supervisor] encerrou: responder · fontes ['fin-viagens-e-reembolso'] · “O limite diário de alimentação em viagens com pernoite em Brasília é de R$ 160,00 por pessoa, desde que a diária do hotel não inclua jantar.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  supervisor                2 chamadas ·   1566 +   99 tokens · US$ 0.00206
+  especialista rh           2 chamadas ·   1779 +   96 tokens · US$ 0.00226
+
+S1 · A Aurora oferece previdência privada?
+arquitetura: supervisor · 3 esp
+
+  [supervisor] recebeu: A Aurora oferece previdência privada?
+  [supervisor] modelo pediu: consultar_beneficios   (723 tokens de entrada, 24 de saída)
+  [supervisor] passa adiante → especialista beneficios: “A Aurora oferece previdência privada?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: A Aurora oferece previdência privada?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (605 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "previdência privada"})  →  ['beneficios-auxilio-creche', 'beneficios-plano-de-saude']
+      [especialista beneficios] modelo pediu: responder   (937 tokens de entrada, 42 de saída)
+      [especialista beneficios] encerrou: nao_sei · fontes [] · “Não encontrei informações sobre a oferta de previdência privada na Aurora Tecnologia.”
+  [supervisor] modelo pediu: responder   (795 tokens de entrada, 42 de saída)
+  [supervisor] encerrou: nao_sei · fontes [] · “Não encontrei informações sobre a oferta de previdência privada na Aurora Tecnologia.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  supervisor                2 chamadas ·   1518 +   66 tokens · US$ 0.00185
+  especialista beneficios   2 chamadas ·   1542 +   65 tokens · US$ 0.00187
+
+S2 · Qual é a política de estacionamento do escritório?
+arquitetura: supervisor · 3 esp
+
+  [supervisor] recebeu: Qual é a política de estacionamento do escritório?
+  [supervisor] modelo pediu: consultar_rh   (725 tokens de entrada, 25 de saída)
+  [supervisor] passa adiante → especialista rh: “Qual é a política de estacionamento do escritório?”
+      [especialista rh] acessa: wiki-rh, confluence-rh, wiki-financeiro
+      [especialista rh] recebeu: Qual é a política de estacionamento do escritório?
+      [especialista rh] modelo pediu: buscar_politicas_rh   (656 tokens de entrada, 22 de saída)
+      [especialista rh] buscar_politicas_rh({"pergunta": "política de estacionamento"})  →  ['fin-viagens-e-reembolso', 'rh-ferias', 'rh-trabalho-remoto']
+      [especialista rh] modelo pediu: responder   (1002 tokens de entrada, 42 de saída)
+      [especialista rh] encerrou: nao_sei · fontes [] · “Não encontrei informações sobre a política de estacionamento do escritório na documentação disponível.”
+  [supervisor] modelo pediu: consultar_ti   (797 tokens de entrada, 25 de saída)
+  [supervisor] passa adiante → especialista ti: “Qual é a política de estacionamento do escritório?”
+      [especialista ti] acessa: wiki-ti
+      [especialista ti] recebeu: Qual é a política de estacionamento do escritório?
+      [especialista ti] modelo pediu: buscar_politicas_ti   (580 tokens de entrada, 22 de saída)
+      [especialista ti] buscar_politicas_ti({"pergunta": "política de estacionamento"})  →  ['ti-acesso-a-sistemas', 'ti-equipamentos']
+      [especialista ti] modelo pediu: responder   (862 tokens de entrada, 42 de saída)
+      [especialista ti] encerrou: nao_sei · fontes [] · “Não encontrei informações sobre a política de estacionamento do escritório na minha área.”
+  [supervisor] modelo pediu: consultar_beneficios   (869 tokens de entrada, 26 de saída)
+  [supervisor] passa adiante → especialista beneficios: “Qual é a política de estacionamento do escritório?”
+      [especialista beneficios] acessa: wiki-beneficios
+      [especialista beneficios] recebeu: Qual é a política de estacionamento do escritório?
+      [especialista beneficios] modelo pediu: buscar_politicas_beneficios   (607 tokens de entrada, 23 de saída)
+      [especialista beneficios] buscar_politicas_beneficios({"pergunta": "política de estacionamento"})  →  ['beneficios-auxilio-creche', 'beneficios-bem-estar', 'beneficios-plano-de-saude']
+      [especialista beneficios] modelo pediu: responder   (910 tokens de entrada, 39 de saída)
+      [especialista beneficios] encerrou: nao_sei · fontes [] · “Não encontrei informações sobre a política de estacionamento do escritório.”
+  [supervisor] modelo pediu: responder   (940 tokens de entrada, 42 de saída)
+  [supervisor] encerrou: nao_sei · fontes [] · “Não encontrei informações sobre a política de estacionamento do escritório na documentação disponível.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  supervisor                4 chamadas ·   3331 +  118 tokens · US$ 0.00392
+  especialista rh           2 chamadas ·   1658 +   64 tokens · US$ 0.00198
+  especialista ti           2 chamadas ·   1442 +   64 tokens · US$ 0.00176
+  especialista beneficios   2 chamadas ·   1517 +   62 tokens · US$ 0.00183
+
+P1 · Bom dia! Você consegue me ajudar com dúvidas de RH e TI?
+arquitetura: supervisor · 3 esp
+
+  [supervisor] recebeu: Bom dia! Você consegue me ajudar com dúvidas de RH e TI?
+  [supervisor] modelo pediu: responder   (730 tokens de entrada, 45 de saída)
+  [supervisor] encerrou: nao_sei · fontes [] · “Não sei a resposta, por favor, me envie suas perguntas específicas sobre RH e TI.”
+
+resultado: ERROU (desfecho 'nao_sei', esperado 'responder')
+custo por agente:
+  supervisor                1 chamadas ·    730 +   45 tokens · US$ 0.00096
+
+X1 · Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?
+arquitetura: supervisor · 3 esp
+
+  [supervisor] recebeu: Tenho um filho de 4 anos. Tenho direito ao auxílio-creche?
+  [supervisor] modelo pediu: escalar_para_rh   (731 tokens de entrada, 40 de saída)
+  [supervisor] encerrou: escalar · “A colaboradora perguntou sobre seu direito ao auxílio-creche e a análise de elegibilidade deve ser feita pelo RH.”
+
+resultado: ACERTOU (ok)
+custo por agente:
+  supervisor                1 chamadas ·    731 +   40 tokens · US$ 0.00093
+
