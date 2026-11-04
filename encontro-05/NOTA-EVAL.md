@@ -59,4 +59,3 @@ Metas propostas pela equipe: **90% acerto**, piso RH/Produto (orçamento de erro
 
 **B13/v2/amostra 0:** duas chamadas (1,044+1,441 s), busca ~0,4 ms, 1.363 tokens, US$0,0002571. Busca retorna `beneficios-plano-de-saude`; passo 2 responde em vez de escalar. Falha na decisão final (step/outcome), não recuperação; restaurar encaminhamento após validar a ambiguidade. [Cascata](evidencias/cascata-v2-B13-a0.png); [trace](evidencias/diagnostico.txt).
 
-**Reprodução:** com `.venv`, `python -X utf8 encontro-05/experimento_equipe.py`. [Evidências/hashes](evidencias/experimentos.json).

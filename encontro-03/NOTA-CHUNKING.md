@@ -5,7 +5,7 @@
 
 ## 1. O que adotamos
 
-Seções Markdown (`##`) com título e seção prefixados; busca híbrida (vetor + BM25/RRF), modelo local `intfloat/multilingual-e5-small`, **k=3**. Apenas `autoridade=oficial`; maior `vigencia` por `politica` entre 9 candidatos, retornando até 3.
+Seções Markdown (`##`) com título e seção prefixados, busca híbrida (vetor + BM25/RRF), modelo local `intfloat/multilingual-e5-small`, **k=3**. Apenas `autoridade=oficial`, maior `vigencia` por `politica` entre 9 candidatos, retornando até 3.
 
 ## 2. Por quê
 
