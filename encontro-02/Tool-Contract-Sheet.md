@@ -63,11 +63,6 @@ A implementação da rede exclui valor negociado, código da operadora e observa
 
 **Resultado dos casos da rede no comparativo:** c16 e c17 falharam por formato no contrato normal e passaram na quebra, após o modelo usar a ferramenta de encerramento. Isso confirma que os dados necessários podem ser obtidos, mas não demonstra encerramento confiável no contrato normal.
 
-Para reproduzir a comparação no PowerShell, a partir da raiz:
-
-```powershell
-.\.venv\Scripts\python.exe -X utf8 encontro-02\rodar.py --comparar 2 --detalhe
-```
 
 **Primeira versão da ferramenta:** c16 e c17 falharam por saída fora do contrato no [primeiro teste](evidencias/teste-primeira-rede-e-elegibilidade.csv). Ambos receberam prestadores corretos, mas a resposta final veio em texto livre. Após orientar explicitamente a citação e o encerramento pela ferramenta `responder`, c16 passou e c17 ainda falhou no [teste após ajuste](evidencias/teste-rede-apos-ajuste.csv).
 
